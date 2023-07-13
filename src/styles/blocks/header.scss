@@ -1,0 +1,51 @@
+.header {
+  background-image: url("../images/main-photo-mobile.jpg");
+  background-position-x: 50%;
+  position: relative;
+
+  height: 667px;
+
+  &__top-actions {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    background-color: #ffffff99;
+  }
+
+  &__text {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    background-image: linear-gradient(to right, #EBE9EA, #f9f9f9);
+
+    color: $c_header;
+    cursor: default;
+    font-family: 'Cormorant Infant', serif;
+    text-align: center;
+    height: 93px;
+    letter-spacing: 0.12em;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    font-style: italic;
+
+    padding: 16px 0 8px;
+    margin: 0 auto;
+
+    width: 285px;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 15px;
+    font-style: italic;
+  }
+}
