@@ -7,3 +7,6 @@ package-lock.json
 
 #Vs code
 .vscode
+
+#parcel
+.parcel-cache
