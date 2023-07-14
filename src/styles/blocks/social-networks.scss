@@ -1,0 +1,11 @@
+.social-networks {
+  width: 80px;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+
+  &__instagram,
+  &__telegram {
+    @include square(32px)
+  }
+}
