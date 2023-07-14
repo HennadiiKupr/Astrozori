@@ -11,24 +11,27 @@
   }
 
   &__calender {
+    background-image: url(../images/calender-mobile.png);
+    background-position: 97% 53%;
+    background-repeat: no-repeat;
+    width: 111px;
+    height: 400px;
+    margin: 32px 0;
     position: absolute;
     left: 0;
-    height: 464px;
-    width: 146px;
 
-    background-image: url("../images/calender.jpg");
-    background-position: 0% 0%;
-
-    &-wrapper {
-      width: 148px;
+    &-line {
+      width: 111px;
       height: 400px;
+      position: absolute;
+      right: -35px;
     }
   }
 
   &__list {
     height: 362px;
-    margin-left: 152px;
-    margin-top: 51px;
+    margin-left: 135px;
+    padding-top: 51px;
 
     font-family: 'Ledger', 'Times New Roman', Times, serif;
     font-size: 14px;
