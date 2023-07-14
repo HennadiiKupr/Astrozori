@@ -2,40 +2,23 @@
   font-family: 'Cormorant Infant', Georgia, 'Times New Roman', serif;
   scroll-behavior: smooth;
   color: $c_main;
+  position: relative;
 
-  // &__nav {
-  //   @include onNotebook {
-  //     margin-bottom: 62px;
-  //   }
-  // }
+  &__body--with-menu {
+    overflow: hidden;
+  }
 
-  // &__header {
-  //   margin-bottom: 110px;
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 
-  //   @include onTablet {
-  //     margin-bottom: 140px;
-  //   }
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
 
-  //   @include onNotebook {
-  //     margin-bottom: 171px;
-  //   }
-  // }
-
-  // &__body--with-menu {
-  //   overflow: hidden;
-  // }
-
-  // &__menu {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-
-  //   transform: translateX(-100%);
-  //   transition: transform 0.4s;
-
-  //   &:target {
-  //     transform: translateX(0);
-  //   }
-  // }
+  &__menu--opened {
+    transform: translateX(0);
+  }
 }
