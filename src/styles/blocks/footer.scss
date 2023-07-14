@@ -1,0 +1,31 @@
+.footer {
+  &__sertificates {
+    display: flex;
+    flex-direction: column;
+    &-1 {
+      width: 286px;
+      height: 204px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+
+    &-2 {
+      width: 231px;
+      height: 164px;
+      border-radius: 16px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__contacts {
+    &-licence {
+
+    }
+
+    &-icons {
+      &-instagram {}
+      &-telegram {}
+    }
+    &-designer {}    
+  }
+}
