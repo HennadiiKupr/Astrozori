@@ -3,33 +3,6 @@
 
   &__header {
     margin: 64px auto 32px;
-
-    &-text {
-      font-family: Cormorant Infant;
-      font-size: 28px;
-      font-weight: 600;
-      line-height: 42px;
-      letter-spacing: 0.04em;
-  
-      width: 210px;
-      margin: auto;
-    }
-
-    &-left-line,
-    &-right-line {
-      position: absolute;
-      border: 0.5px solid black;
-      width: 40px;    
-      top: 751.5px;
-    }
-
-    &-left-line {
-      left: 0;
-    }
-
-    &-right-line {
-      right: 0;
-    }
   }
 
   &__text {
