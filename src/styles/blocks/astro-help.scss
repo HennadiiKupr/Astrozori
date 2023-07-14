@@ -1,0 +1,65 @@
+.astro-help {
+  height: 522px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 16px;
+    &-left-line,
+    &-right-line {
+      top: 1317.5px
+    }
+  }
+
+  &__calender {
+    position: absolute;
+    left: 0;
+    height: 464px;
+    width: 146px;
+
+    background-image: url("../images/calender.jpg");
+    background-position: 0% 0%;
+
+    &-wrapper {
+      width: 148px;
+      height: 400px;
+    }
+  }
+
+  &__list {
+    height: 362px;
+    margin-left: 152px;
+    margin-top: 51px;
+
+    font-family: 'Ledger', 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+  }
+
+  &__item {
+    display: block;
+
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 51px;
+    }
+
+    &--2,
+    &--6 {
+      margin-left: 16px;
+    }
+
+    &--3, 
+    &--5 {
+      margin-left: 32px;
+    }
+
+    &--4 {
+      margin-left: 48px;
+    }
+  }
+}
