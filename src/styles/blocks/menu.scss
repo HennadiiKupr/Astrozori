@@ -1,8 +1,9 @@
 .menu {
-  height: 100vh;
+  height: 93vh;
 
   background-image: url("../images/menu-background.jpg");
   z-index: 1;
+  background-position-y: bottom;
 
   &__content {
     margin-top: 28vh;
@@ -41,7 +42,7 @@
 
   &__logo {
     position: absolute;
-    bottom: 24px;
+    bottom: -2px;
     right: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
