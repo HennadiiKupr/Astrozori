@@ -27,7 +27,7 @@ p, h1, h2, h3, h4, h5, div {
 
 .page__body {
   background-image: url("background.4618d3e1.jpg");
-  background-position: 0 -54%;
+  background-position: 17% -53%;
 }
 
 .page__body--with-menu {
@@ -1144,25 +1144,29 @@ p, h1, h2, h3, h4, h5, div {
 }
 
 .astro-help__calender {
-  background-image: url("calender.fc6f3ad3.jpg");
-  background-position: 0 0;
-  width: 146px;
-  height: 464px;
+  background-image: url("calender-mobile.548ab20f.png");
+  background-position: 97% 53%;
+  background-repeat: no-repeat;
+  width: 111px;
+  height: 400px;
+  margin: 32px 0;
   position: absolute;
   left: 0;
 }
 
-.astro-help__calender-wrapper {
-  width: 148px;
+.astro-help__calender-line {
+  width: 111px;
   height: 400px;
+  position: absolute;
+  right: -35px;
 }
 
 .astro-help__list {
   letter-spacing: .04em;
   text-align: left;
   height: 362px;
-  margin-top: 51px;
-  margin-left: 152px;
+  margin-left: 135px;
+  padding-top: 51px;
   font-family: Ledger, Times New Roman, Times, serif;
   font-size: 14px;
   font-weight: 400;
