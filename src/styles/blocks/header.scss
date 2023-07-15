@@ -1,9 +1,10 @@
 .header {
-  background-image: url("../images/main-photo-mobile.jpg");
+  background-image: url("../images/main-photo.jpeg");
   background-position-x: 50%;
   position: relative;
+  background-repeat: no-repeat;
 
-  height: 667px;
+  height: 100vh;
 
   &__top-actions {
     position: absolute;
@@ -22,12 +23,15 @@
 
     background-image: linear-gradient(to right, #EBE9EA, #f9f9f9);
 
-    color: $c_header;
     cursor: default;
     font-family: 'Cormorant Infant', serif;
     text-align: center;
     height: 93px;
     letter-spacing: 0.12em;
+
+    @media screen and (min-height: 860px) {
+      height: 110px;
+    }
   }
 
   &__title {
@@ -35,8 +39,12 @@
     font-weight: 500;
     line-height: 19px;
     font-style: italic;
+    color: $c_header;
 
     padding: 16px 0 8px;
+    @include onHighScreen {
+      padding: 20px 0 10px;
+    }
     margin: 0 auto;
 
     width: 285px;
@@ -47,5 +55,6 @@
     font-weight: 300;
     line-height: 15px;
     font-style: italic;
+    color: $c_header;
   }
 }
