@@ -1,8 +1,4 @@
 .grid {
-  @include onBigScreen {
-    display: grid;
-  }
-
   @include onNotebook {
     grid-template-columns: repeat(12, $column-width-notebook);
     column-gap: $column-gap-notebook;

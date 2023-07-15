@@ -1,0 +1,8 @@
+@keyframes createCross {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(45deg);
+  }
+}
