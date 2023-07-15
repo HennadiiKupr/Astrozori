@@ -7,7 +7,7 @@
     "lint": "eslint ./src",
     "test": "npm run lint -- --fix",
     "start": "npx parcel src/index.html",
-    "deploy": "npm run build && git checkout gh-pages && cp -R dist/* . && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin gh-pages && git checkout main"
+    "deploy": "npm run build && git checkout gh-pages && cp -R dist/* . && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin gh-pages && git checkout master"
   },
   "repository": {
     "type": "git",
