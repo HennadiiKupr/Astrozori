@@ -1,7 +1,16 @@
 .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+
   &__sertificates {
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    margin: 0, auto;
+
     &-1 {
       width: 286px;
       height: 204px;
@@ -17,14 +26,37 @@
     }
   }
 
-  &__contacts {
-    &-licence {
+  &__logo {
+    margin-bottom: 64px;
+  }
 
+  &__contacts {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    &-licence {
+      display: flex;
+      align-items: center;
+
+      &-icon {
+        width: 13px;
+        height: 13px;
+        margin-right: 3px;
+      }
     }
 
     &-icons {
-      &-instagram {}
-      &-telegram {}
+      &-instagram {
+        width: 32px;
+        height: 32px;
+        margin-right: 23px;
+      }
+
+      &-telegram {
+        width: 32px;
+        height: 32px;
+      }
     }
     &-designer {}    
   }
