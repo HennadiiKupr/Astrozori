@@ -18,8 +18,9 @@
 
   &__calender {
     background-image: url(../images/calender-mobile.png);
+    background-size: cover;
+    background-position: 91% 17px;
     background-repeat: no-repeat;
-    background-position: 78% 0%;
     width: 336px;
     height: 400px;
     margin: 16px 0 32px -197px;
