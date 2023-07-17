@@ -16,8 +16,8 @@
   }
 }
 
-@mixin onBigScreen {
-  @media (min-width: 768px) {
+@mixin onHighScreen {
+  @media (min-height: 870px) {
     @content;
   }
 }

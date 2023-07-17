@@ -1,4 +1,5 @@
 .astro-help {
+  position: relative;
   height: 522px;
 
   &__header {
@@ -6,29 +7,29 @@
     margin-bottom: 16px;
     &-left-line,
     &-right-line {
-      top: 1317.5px
+      top: 20.5px
     }
   }
 
+  &__content-wrapper {
+    display: flex;
+    gap: 6px;
+  }
+
   &__calender {
-    position: absolute;
-    left: 0;
-    height: 464px;
-    width: 146px;
-
-    background-image: url("../images/calender.jpg");
-    background-position: 0% 0%;
-
-    &-wrapper {
-      width: 148px;
-      height: 400px;
-    }
+    background-image: url(../images/calender-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 78% 0%;
+    width: 336px;
+    height: 400px;
+    margin: 16px 0 32px -197px;
+    transform: scale(1.1);
   }
 
   &__list {
     height: 362px;
-    margin-left: 152px;
-    margin-top: 51px;
+    padding-top: 51px;
+    width: 60%;
 
     font-family: 'Ledger', 'Times New Roman', Times, serif;
     font-size: 14px;
@@ -36,7 +37,6 @@
     line-height: 19px;
     letter-spacing: 0.04em;
     text-align: left;
-
   }
 
   &__item {
@@ -45,7 +45,7 @@
     margin-bottom: 16px;
 
     &:last-child {
-      margin-bottom: 51px;
+      margin-bottom: 67px;
     }
 
     &--2,

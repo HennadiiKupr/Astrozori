@@ -26,3 +26,23 @@ window.addEventListener('load', function() {
     window.location.hash = '';
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var selLabel = document.querySelector(".selLabel");
+  var dropdown = document.querySelector(".dropdown");
+  var dropdownList = document.querySelectorAll(".dropdown-list li");
+  var selectedItem = document.querySelector(".selected-item p span");
+  
+  selLabel.addEventListener("click", function() {
+    dropdown.classList.toggle("active");
+  });
+  
+  dropdownList.forEach(function(item) {
+    item.addEventListener("click", function() {
+      selLabel.textContent = item.textContent;
+      dropdown.classList.remove("active");
+      selectedItem.textContent = selLabel.textContent;
+    });
+  });
+});

@@ -1,11 +1,12 @@
 .menu {
-  height: 667px;
+  height: 93vh;
 
   background-image: url("../images/menu-background.jpg");
   z-index: 1;
+  background-position-y: bottom;
 
   &__content {
-    margin-top: 128px;
+    margin-top: 28vh;
   }
 
   &__list {
@@ -40,6 +41,10 @@
   }
 
   &__logo {
-    margin: 0 auto 24px;
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

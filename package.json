@@ -2,11 +2,12 @@
   "name": "astrozori",
   "version": "1.0.0",
   "description": "site that gives astrology consultations",
-  "main": "index.js",
   "scripts": {
+    "build": "parcel build src/index.html",
     "lint": "eslint ./src",
     "test": "npm run lint -- --fix",
-    "start": "npx parcel src/index.html"
+    "start": "npx parcel src/index.html",
+    "deploy": "npm run build && git checkout gh-pages && cp -R dist/* . && git add . && git commit -m 'Deploy to GitHub Pages' && git push origin gh-pages && git checkout master"
   },
   "repository": {
     "type": "git",
