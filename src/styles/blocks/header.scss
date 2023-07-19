@@ -2,9 +2,11 @@
   background-image: url("../images/main-photo.jpeg");
   background-position-x: 50%;
   position: relative;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 
-  height: 93vh;
+  height: 100vh;
 
   &__top-actions {
     position: absolute;

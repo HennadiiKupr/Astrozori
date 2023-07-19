@@ -1,0 +1,30 @@
+.dropdown {
+    position: relative;
+    height: 72px;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(180deg, #F7EEDB 0%, #DFCBA3 100%);
+    border-image-slice: 1;
+    border-image-repeat: stretch;
+
+  &__button {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    font-family: 'Cormorant Infant', 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 24px;
+    margin-bottom: 4px;
+  }
+
+  &__arrow-wrapper {
+    width: 16px;
+    margin: auto;
+  }
+}

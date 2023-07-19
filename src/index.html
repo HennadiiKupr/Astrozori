@@ -175,7 +175,7 @@
 
             <button 
               onclick="window.location.href='https://t.me/hnatchukzoriana'" 
-              class="acquaintance__consultation" 
+              class="acquaintance__consultation consultation-button" 
               type="button"
             >
               Замовити консультацію
@@ -184,7 +184,7 @@
         </div>
       </section>
 
-      <section class="astro-help" id="astro-help">
+      <section class="astro-help page__astro-help" id="astro-help">
         <div class="container">
           <div class="astro-help__content">
             <div class="astro-help__header sections-header">
@@ -245,27 +245,214 @@
 
               <div class="section-header-right-line services__header-right-line"></div>
             </div>
-            <ul class="services__list">
-              <li class="services__item services__item--1">
-                Повний розбір натальної карти
-              </li>
+            <div class="services__list">
+              <label class="services__item">
+                <div class="services__dropdown dropdown">
+                  <h2 class="dropdown__text">
+                    повний розбір натальної карти
+                  </h2>
+                  <input 
+                    type="checkbox" 
+                    class="dropdown__button" 
+                    id="first-service" 
+                    onchange="changeTextareaHeight(this)"
+                  /> 
+                  <div class="dropdown__arrow-wrapper">
+                    <img 
+                      src="./images/arrow.svg" 
+                      alt="" 
+                      class="dropdown__arrow"
+                    >
+                  </div>
+                </div>
 
-              <li class="services__item services__item--2">
-                Синастрія (сумісність у парі)
-              </li>
+                <div class="services__item-content">
+                  <div class="services__item-background">
+                    <h2 class="services__item-header">
+                      повний розбір натальної карти
+                    </h2>
+                    <p class="services__item-text">
+                      Опис характеру і психологічних особливостей. <br>
+                      Перше враження про Вас та чого від Вас очікують оточуючі. <br>
+                      Аналіз здібностей та виявлення сильних і слабких сторін. <br>
+                      Кар’єра / Бізнес / Робота на себе. Список професій і сфер бізнесу. <br>
+                      Особисте життя. <br>
+                      Компенсаторика слабких та уражених планет в карті.
+                    </p>
+                    <p class="services__item-price">
+                      2000 грн
+                    </p>
+                    <div class="services__item-arrow-wrapper">
+                      <img src="./images/arrow.svg" alt="" class="services__item-arrow">
+                    </div>
+                  </div>
+                </div>
+              </label>
+  
+              <label class="services__item">
+                <div class="services__dropdown dropdown">
+                  <h2 class="dropdown__text">
+                    синастрія (сумісність у парі)
+                  </h2>
+                  <input 
+                    type="checkbox" 
+                    class="dropdown__button" 
+                    id="second-service" 
+                    onchange="changeTextareaHeight(this)"
+                  /> 
+                  <div class="dropdown__arrow-wrapper">
+                    <img 
+                      src="./images/arrow.svg" 
+                      alt="" 
+                      class="dropdown__arrow"
+                    >
+                  </div>
+                </div>
 
-              <li class="services__item services__item--3">
-                Астрологічний прогноз на рік
-              </li>
+                <div class="services__item-content">
+                  <div class="services__item-background">
+                    <h2 class="services__item-header">
+                      синастрія
+                    </h2>
+                    <p class="services__item-text services__item-text--special">
+                      Психологічна/сексуальна/гендерна сумісність в парі. <br>
+                      Як будуть складати стосунки з даним партнером. <br>
+                      Проблеми/конфлікти/непорозуміння та шляхи їхнього вирішення. <br>
+                      Потреби в парі. <br>
+                      Вплив партнера на Вашу особистість (печать щастя /нещастя).
+                    </p>
+                    <p class="services__item-price">
+                      1700 грн
+                    </p>
+                    <div class="services__item-arrow-wrapper">
+                      <img 
+                        src="./images/arrow.svg" 
+                        alt="" 
+                        class="services__item-arrow"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </label>
+  
+              <label class="services__item">
+                <div class="services__dropdown dropdown">
+                  <h2 class="dropdown__text">
+                    астрологічний прогноз на рік
+                  </h2>
+                  <input type="checkbox" class="dropdown__button" id="third-service" onchange="changeTextareaHeight(this)"/> 
+                  <div class="dropdown__arrow-wrapper">
+                    <img src="./images/arrow.svg" alt="" class="dropdown__arrow">
+                  </div>
+                </div>
 
-              <li class="services__item services__item--4">
-                Дитяча карта
-              </li>
+                <div class="services__item-content">
+                  <div class="services__item-background">
+                    <h2 class="services__item-header">
+                      соляр
+                    </h2>
+                    <p class="services__item-text">
+                      Основні тенденції, настрої та енергії нового року. <br>
+                      Аналіз всіх сфер життя на наступний рік. <br>
+                      Де відкриються можливості та в чому себе найкраще проявити. <br>
+                      Питання, які потребуватись особливої уваги та пропрацювання протягом року. <br>
+                      Побудова планів та цілей на наступний рік.
+                    </p>
+                    <p class="services__item-price">
+                      1400 грн
+                    </p>
+                    <div class="services__item-arrow-wrapper">
+                      <img src="./images/arrow.svg" alt="" class="services__item-arrow">
+                    </div>
+                  </div>
+                </div>
+              </label>
+  
+              <label class="services__item">
+                <div class="services__dropdown dropdown">
+                  <h2 class="dropdown__text">
+                    дитяча карта
+                  </h2>
+                  <input 
+                    type="checkbox" 
+                    class="dropdown__button" 
+                    id="fourth-service" 
+                    onchange="changeTextareaHeight(this)"
+                  /> 
+                  <div class="dropdown__arrow-wrapper">
+                    <img 
+                      src="./images/arrow.svg" 
+                      alt="" 
+                      class="dropdown__arrow"
+                    >
+                  </div>
+                </div>
 
-              <li class="services__item services__item--5">
-                Venus Code
-              </li>
-            </ul>
+                <div class="services__item-content">
+                  <div class="services__item-background">
+                    <h2 class="services__item-header">
+                      дитяча карта
+                    </h2>
+                    <p class="services__item-text">
+                      Характер та емоції Вашої дитини, її
+                      таланти і здібності. <br>
+                      Як дитина сприймає батьків і що від них очікує. <br>
+                      Як правильно взаємодіяти з малюком. <br>
+                      Який метод навчання їй/йому підходить. <br>
+                      Фізична активність і рекомендований спорт. <br>
+                      Список професій для майбутньої реалізації.
+                    </p>
+                    <p class="services__item-price">
+                      800 грн
+                    </p>
+                    <div class="services__item-arrow-wrapper">
+                      <img src="./images/arrow.svg" alt="" class="services__item-arrow">
+                    </div>
+                  </div>
+                </div>
+              </label>
+  
+              <label class="services__item">
+                <div class="services__dropdown dropdown">
+                  <h2 class="dropdown__text">
+                    venus code
+                  </h2>
+                  <input type="checkbox" class="dropdown__button" id="third-service" onchange="changeTextareaHeight(this)"/> 
+                  <div class="dropdown__arrow-wrapper">
+                    <img src="./images/arrow.svg" alt="" class="dropdown__arrow">
+                  </div>
+                </div>
+
+                <div class="services__item-content">
+                  <div class="services__item-background">
+                    <h2 class="services__item-header">
+                      venus code
+                    </h2>
+                    <p class="services__item-text services__item-text--venus">
+                      Характеристика та опис Вашої внутрішньої жінки. <br>
+                      Особистий список дій для розблокування та підсилення жіночої енергії. <br>
+                      Опис стилю, який допоможе проявити Вашу Венеру через одяг, макіяж та аксесуари. <br>
+                      Палітра кольорів та Ваші актуальні образи по Венері (lookbook).
+                    </p>
+                    <p class="services__item-price">
+                      900 грн
+                    </p>
+                    <div class="services__item-arrow-wrapper">
+                      <img src="./images/arrow.svg" alt="" class="services__item-arrow">
+                    </div>
+                  </div>
+                </div>
+              </label>
+  
+            </div>
+
+            <button 
+            onclick="window.location.href='https://t.me/hnatchukzoriana'" 
+            class="services__consultation consultation-button" 
+            type="button"
+          >
+            Замовити консультацію
+          </button>
           </div>
         </div>
       </section>
