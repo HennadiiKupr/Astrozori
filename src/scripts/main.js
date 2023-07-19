@@ -70,16 +70,16 @@ secondService.addEventListener('change', function() {
 });
 
 const thirdService = document.getElementById('third-service');
-secondService.addEventListener('change', function() {
+trirdService.addEventListener('change', function() {
   changeTextareaHeight(this);
 });
 
 const fourthService = document.getElementById('fourth-service');
-firstService.addEventListener('change', function() {
+fourthService.addEventListener('change', function() {
   changeTextareaHeight(this);
 });
 
 const fifthService = document.getElementById('fifth-service');
-secondService.addEventListener('change', function() {
+fifthService.addEventListener('change', function() {
   changeTextareaHeight(this);
 });
