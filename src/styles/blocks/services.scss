@@ -1,9 +1,109 @@
 .services {
   position: relative;
+  cursor: pointer; 
+
   &__header {
     &-right-line,
     &-left-line {
       top: 20.5px;
     }
+
+    width: 100px;
+
+    margin: 0 auto 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    &-content {
+      height: 0px;
+      overflow: hidden;
+      transition: height 1s ease;
+    }
+
+    &-background {
+      position: relative;
+      padding: 24px 16px 8px;
+      margin-top: 16px;
+      transition: height 1s ease;
+      overflow: hidden;
+      height: 0px;
+
+      background-clip: content-box;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, #F7EEDB 0%, #DFCBA3 100%);
+        border-radius: 40px;
+        z-index: -1;
+      }
+    }
+
+    &-header {
+      margin-bottom: 16px;
+
+      font-family: 'Cormorant Infant', 'Times New Roman', Times, serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+
+      text-transform: uppercase;
+    }
+
+    &-text {
+      width: 296px;
+      margin-bottom: 32px;
+
+      font-family: 'Ledger', 'Times New Roman', Times, serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0.04em;
+
+      &--special {
+        margin-bottom: 65px;
+      }
+
+      &--venus {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-price {
+      margin-bottom: 32px;
+
+      font-family: 'Cormorant Infant', 'Times New Roman', Times, serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;      
+    }
+
+    &-arrow-wrapper {
+      position: absolute;
+      bottom: 8;
+      left: 157;
+
+      width: 16px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
   }
 }

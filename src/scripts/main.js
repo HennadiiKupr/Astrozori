@@ -46,3 +46,40 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+function changeTextareaHeight(checkbox) {
+  const textarea = checkbox.parentNode.nextElementSibling;
+  const firstChild = textarea.firstElementChild;
+  if (checkbox.checked) {
+    textarea.style.height = '427px';
+    firstChild.style.height = '411px';
+  } else {
+    textarea.style.height = '';
+    firstChild.style.height = '';
+  }
+}
+
+const firstService = document.getElementById('first-service');
+firstService.addEventListener('change', function() {
+  changeTextareaHeight(this);
+});
+
+const secondService = document.getElementById('second-service');
+secondService.addEventListener('change', function() {
+  changeTextareaHeight(this);
+});
+
+const thirdService = document.getElementById('third-service');
+secondService.addEventListener('change', function() {
+  changeTextareaHeight(this);
+});
+
+const fourthService = document.getElementById('fourth-service');
+firstService.addEventListener('change', function() {
+  changeTextareaHeight(this);
+});
+
+const fifthService = document.getElementById('fifth-service');
+secondService.addEventListener('change', function() {
+  changeTextareaHeight(this);
+});
