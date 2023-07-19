@@ -70,7 +70,7 @@ secondService.addEventListener('change', function() {
 });
 
 const thirdService = document.getElementById('third-service');
-trirdService.addEventListener('change', function() {
+thirdService.addEventListener('change', function() {
   changeTextareaHeight(this);
 });
 
