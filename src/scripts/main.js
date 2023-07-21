@@ -110,11 +110,11 @@ updatePagination();
 let touchStartX = 0;
 
 slider.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
+  touchStartX = e.touches[currentPage].clientX;
 });
 
 slider.addEventListener('touchmove', (e) => {
-  const touchMoveX = e.touches[0].clientX;
+  const touchMoveX = e.touches[currentPage].clientX;
   const touchDiff = touchStartX - touchMoveX;
 
   if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
