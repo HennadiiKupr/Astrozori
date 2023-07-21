@@ -79,7 +79,7 @@ const SWIPE_THRESHOLD = 100;
 
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
-  slider.style.transform = `translateX(-${offset * 358}px)`; 
+  slider.style.transform = `translateX(-${offset * 358}px)`;
 }
 
 function updatePagination() {
@@ -107,18 +107,22 @@ function setupPagination() {
 setupPagination();
 updatePagination();
 
-let pointerStartX = 0;
+let touchStartX = 0;
+let touchEndX = 0;
 
-slider.addEventListener('pointerdown', (e) => {
-  pointerStartX = e.clientX;
+slider.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
 });
 
-slider.addEventListener('pointerup', (e) => {
-  const pointerEndX = e.clientX;
-  const pointerDiff = pointerStartX - pointerEndX;
+slider.addEventListener('touchmove', (e) => {
+  touchEndX = e.touches[0].clientX;
+});
 
-  if (Math.abs(pointerDiff) > SWIPE_THRESHOLD) {
-    if (pointerDiff > 0) {
+slider.addEventListener('touchend', () => {
+  const touchDiff = touchStartX - touchEndX;
+
+  if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
+    if (touchDiff > 0) {
       goToPage(currentPage + 1);
     } else {
       goToPage(currentPage - 1);
