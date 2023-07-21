@@ -73,11 +73,18 @@ const pagination = document.querySelector('.pagination');
 
 const totalSlides = slides.length;
 const slidesPerPage = 1;
-let currentPage = 0;
+let currentPage = 2;
+
+function updateVisibleDots() {
+  const dots = Array.from(pagination.children);
+  dots.forEach((dot, index) => {
+    dot.style.display = (Math.abs(currentPage - index) <= 1) ? 'inline-block' : 'none';
+  });
+}
 
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
-  slider.style.transform = `translateX(-${offset * 358}px)`; 
+  slider.style.transform = `translateX(-${offset * 358}px)`;
 }
 
 function updatePagination() {
@@ -91,6 +98,7 @@ function goToPage(page) {
   currentPage = Math.max(0, Math.min(page, Math.ceil(totalSlides / slidesPerPage) - 1));
   updateSlider();
   updatePagination();
+  updateVisibleDots();
 }
 
 function setupPagination() {
@@ -104,6 +112,14 @@ function setupPagination() {
 
 setupPagination();
 updatePagination();
+updateVisibleDots(); 
+
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if (isSafari) {
+  slider.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+  });
+}
 
 // Swipe Handling
 let touchStartX = 0;
