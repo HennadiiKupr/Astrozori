@@ -128,4 +128,8 @@ slider.addEventListener('touchend', () => {
       goToPage(currentPage - 1);
     }
   }
+
+  // Скидаємо значення touchStartX та touchEndX
+  touchStartX = 0;
+  touchEndX = 0;
 });
