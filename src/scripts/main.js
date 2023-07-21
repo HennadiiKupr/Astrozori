@@ -75,6 +75,8 @@ const totalSlides = slides.length;
 const slidesPerPage = 1;
 let currentPage = 0;
 
+const SWIPE_THRESHOLD = 150; // Збільшимо значення порогу для змаху
+
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
   slider.style.transform = `translateX(-${offset * 358}px)`; 
@@ -113,13 +115,19 @@ slider.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
 });
 
+slider.addEventListener('touchmove', (e) => {
+  e.preventDefault(); // Запобігання "Rubber Band" ефекту
+});
+
 slider.addEventListener('touchend', (e) => {
   touchEndX = e.changedTouches[0].clientX;
-  const touchDiff = touchStartX - touchEndX;
+  const touchDiff = Math.abs(touchStartX - touchEndX); // Отримаємо позитивне значення різниці
 
-  if (touchDiff > 50) {
-    goToPage(currentPage + 1);
-  } else if (touchDiff < -50) {
-    goToPage(currentPage - 1);
+  if (touchDiff > SWIPE_THRESHOLD) {
+    if (touchEndX < touchStartX) {
+      goToPage(currentPage + 1); // Змах вліво
+    } else {
+      goToPage(currentPage - 1); // Змах вправо
+    }
   }
 });
