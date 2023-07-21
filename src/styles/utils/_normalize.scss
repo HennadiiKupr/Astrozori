@@ -32,10 +32,15 @@ p, span, a, li, td, th {
   }
 }
 
-*:focus {
-  outline: none;
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-a, button, input, select, textarea {
-  -webkit-tap-highlight-color: transparent; /* Для WebKit (Chrome, Safari) */
+.noSelect:focus {
+  outline: none !important;
 }

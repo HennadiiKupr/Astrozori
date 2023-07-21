@@ -1,13 +1,16 @@
 const checkbox = document.getElementById('menu-opener');
-const menu = document.getElementById('menu')
+const menu = document.getElementById('menu');
 
 window.addEventListener('change', () => {
   if (checkbox.checked) {
     document.body.classList.add('page__body--with-menu');
     window.location.hash = '#menu';
+  } else if (window.location.hash === '#menu') {
+    console.log(132)
+    document.body.classList.remove('page__body--with-menu');
+    window.location.hash = ''
   } else {
     document.body.classList.remove('page__body--with-menu');
-    window.location.hash = '';
   }
 });
 
@@ -16,7 +19,7 @@ window.addEventListener('hashchange', () => {
     menu.classList.add('page__menu--opened')
   } else {
     document.body.classList.remove('page__body--with-menu');
-    menu.classList.remove('page__menu--opened')
+    menu.classList.remove('page__menu--opened');
     checkbox.checked = false;
   }
 });
