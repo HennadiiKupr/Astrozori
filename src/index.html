@@ -469,94 +469,79 @@
               <div class="section-header-right-line feedbacks__header-right-line"></div>
             </div>
 
-            <div class="swiper-container" space-between="50">
-              <div class="swiper-wrapper" >
-                <div class="swiper-slide swiper-slide--1">
-                  <div class="slide__content">
-                    <p class="slide__feedback">
-                      В загальному, так багато влучних речей <br>
-                      сказала. <br>
-                      Мій гардероб практично весь в таких <br>
-                      кольорах і відтінках, <br>
-                      виявляється не просто так :)
-                    </p>
-                    <p class="slide__name">
-                      Мар'яна
-                    </p>
-                  </div>
+            <swiper-container>
+              <swiper-slide>
+                <div class="slide__content">
+                  <p class="slide__feedback">
+                    В загальному, так багато влучних речей <br>
+                    сказала. <br>
+                    Мій гардероб практично весь в таких <br>
+                    кольорах і відтінках, <br>
+                    виявляється не просто так :)
+                  </p>
+                  <p class="slide__name">
+                    Мар'яна
+                  </p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="slide__content">
-                    <p class="slide__feedback">
-                      Це 100% правди,яку я отримав з досвідом. <br>
-                      Я до цього дійшов якийсь час тому, але <br>
-                      зараз отримав <br>
-                      підтвердження, що роблю все правильно. <br>
-                      Зрештою, і результат теж бачу :)
-                    </p>
-                    <p class="slide__name">
-                      Володимир
-                    </p>
-                  </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="slide__content">
+                  <p class="slide__feedback">
+                    Це 100% правди,яку я отримав з досвідом. <br>
+                    Я до цього дійшов якийсь час тому, але <br>
+                    зараз отримав <br>
+                    підтвердження, що роблю все правильно. <br>
+                    Зрештою, і результат теж бачу :)
+                  </p>
+                  <p class="slide__name">
+                    Володимир
+                  </p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="slide__content">
-                    <p class="slide__feedback">
-                      Я б сказала, що ви десь читаєте моє минуле, <br>
-                      сьогодення і коригуєте мій шлях. <br>
-                      Даєте відповіді на питання, котрі я десь <br>
-                      відкладала і пропускала.
-                    </p>
-                    <p class="slide__name">
-                      Ірина
-                    </p>
-                  </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="slide__content">
+                  <p class="slide__feedback">
+                    Я б сказала, що ви десь читаєте моє минуле, <br>
+                    сьогодення і коригуєте мій шлях. <br>
+                    Даєте відповіді на питання, котрі я десь <br>
+                    відкладала і пропускала.
+                  </p>
+                  <p class="slide__name">
+                    Ірина
+                  </p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="slide__content">
-                    <p class="slide__feedback">
-                      За “любов” ти попала в точку. <br>
-                      Я в стосунках вже 2-ий рік <br>
-                      і це дійсно відкриває мені <br>
-                      інший горизонт. <br>
-                      Якась мотивація більша. 
-                    </p>
-                    <p class="slide__name">
-                      Роман
-                    </p>
-                  </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="slide__content">
+                  <p class="slide__feedback">
+                    За “любов” ти попала в точку. <br>
+                    Я в стосунках вже 2-ий рік <br>
+                    і це дійсно відкриває мені <br>
+                    інший горизонт. <br>
+                    Якась мотивація більша. 
+                  </p>
+                  <p class="slide__name">
+                    Роман
+                  </p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="slide__content">
-                    <p class="slide__feedback">
-                      Боже, Зоряна, я просто немаю слів. <br>
-                      Я послухала Ваші аудіо, <br>
-                      настільки ви все описали з точністю, <br>
-                      мій внутрішній стан, те, що я часто думаю <br>
-                      про себе.  
-                    </p>
-                    <p class="slide__name">
-                      Олександра
-                    </p>
-                  </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="slide__content">
+                  <p class="slide__feedback">
+                    Боже, Зоряна, я просто немаю слів. <br>
+                    Я послухала Ваші аудіо, <br>
+                    настільки ви все описали з точністю, <br>
+                    мій внутрішній стан, те, що я часто думаю <br>
+                    про себе.  
+                  </p>
+                  <p class="slide__name">
+                    Олександра
+                  </p>
                 </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-            <script>
-              var swiper = new Swiper('.swiper-container', {
-                pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-                  renderBullet: function (index, className) {
-                    return `<div class="${className}"></div>`;
-                  },
-                },
-              });
-            </script>
+              </swiper-slide>
+            </swiper-container>
+          
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
           </div>
         </div>
       </section>

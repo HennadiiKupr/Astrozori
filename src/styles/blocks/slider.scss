@@ -1,84 +1,20 @@
-.swiper-container {
-  width: 390px;
+swiper-container {
+  width: 100%;
   height: 100%;
 }
 
-.swiper-wrapper {
-  transition-duration: 0ms;
-  transform: translate3d(0px, 0px, 0px);
-  display: flex;
-  width: 1950px;
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-
-.swiper-slide {
+swiper-slide {
   text-align: center;
   font-size: 18px;
-  height: 205px;
-  width: 390px;
-  padding: 24px 16px;
-  box-shadow: 0px 16px 24px -16px #3B383840;
-
-  background-image: url("../images/border.svg");
-  background-position-x: 8px;
-  background-repeat: no-repeat;
-
-  &:last-child {
-    margin-right: 0;
-    padding-left: 0;
-  }
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  background: #fff;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
-/* custmm bullets style */
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  align-items: center;
-}
-
-.swiper-pagination-bullet {
-  @include square(14px);
-  background: linear-gradient(180deg, #F7EEDB 0%, #DFCBA3 100%);
-  border-radius: 4px
-}
-.swiper-pagination-bullet-active {
-  @include square(20px);
-  background: #DFCBA3;  
-  border-radius: 6px;
-}
-
-.slide {
-  &__content {
-    font-family: 'Ledger', 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    letter-spacing: 0.04em;  
-  }
-
-  &__feedback {
-    line-height: 21px;
-    margin-bottom: 24px;
-  }
-
-  &__name {
-    font-size: 20px;
-    line-height: 28px;
-  }
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
