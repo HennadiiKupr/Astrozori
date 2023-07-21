@@ -1,13 +1,16 @@
 const checkbox = document.getElementById('menu-opener');
-const menu = document.getElementById('menu')
+const menu = document.getElementById('menu');
 
 window.addEventListener('change', () => {
   if (checkbox.checked) {
     document.body.classList.add('page__body--with-menu');
     window.location.hash = '#menu';
+  } else if (window.location.hash === '#menu') {
+    console.log(132)
+    document.body.classList.remove('page__body--with-menu');
+    window.location.hash = ''
   } else {
     document.body.classList.remove('page__body--with-menu');
-    window.location.hash = '';
   }
 });
 
@@ -16,7 +19,7 @@ window.addEventListener('hashchange', () => {
     menu.classList.add('page__menu--opened')
   } else {
     document.body.classList.remove('page__body--with-menu');
-    menu.classList.remove('page__menu--opened')
+    menu.classList.remove('page__menu--opened');
     checkbox.checked = false;
   }
 });
@@ -25,26 +28,6 @@ window.addEventListener('load', function() {
   if (window.location.hash) {
     window.location.hash = '';
   }
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var selLabel = document.querySelector(".selLabel");
-  var dropdown = document.querySelector(".dropdown");
-  var dropdownList = document.querySelectorAll(".dropdown-list li");
-  var selectedItem = document.querySelector(".selected-item p span");
-  
-  selLabel.addEventListener("click", function() {
-    dropdown.classList.toggle("active");
-  });
-  
-  dropdownList.forEach(function(item) {
-    item.addEventListener("click", function() {
-      selLabel.textContent = item.textContent;
-      dropdown.classList.remove("active");
-      selectedItem.textContent = selLabel.textContent;
-    });
-  });
 });
 
 function changeTextareaHeight(checkbox) {
@@ -82,4 +65,61 @@ fourthService.addEventListener('change', function() {
 const fifthService = document.getElementById('fifth-service');
 fifthService.addEventListener('change', function() {
   changeTextareaHeight(this);
+});
+
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const pagination = document.querySelector('.pagination');
+
+const totalSlides = slides.length;
+const slidesPerPage = 1;
+let currentPage = 0;
+
+function updateSlider() {
+  const offset = currentPage * slidesPerPage;
+  slider.style.transform = `translateX(-${offset * 358}px)`; 
+}
+
+function updatePagination() {
+  const dots = Array.from(pagination.children);
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentPage);
+  });
+}
+
+function goToPage(page) {
+  currentPage = Math.max(0, Math.min(page, Math.ceil(totalSlides / slidesPerPage) - 1));
+  updateSlider();
+  updatePagination();
+}
+
+function setupPagination() {
+  const numPages = Math.ceil(totalSlides / slidesPerPage);
+  for (let i = 0; i < numPages; i++) {
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => goToPage(i));
+    pagination.appendChild(dot);
+  }
+}
+
+setupPagination();
+updatePagination();
+
+// Swipe Handling
+let touchStartX = 0;
+let touchEndX = 0;
+
+slider.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX;
+  const touchDiff = touchStartX - touchEndX;
+
+  if (touchDiff > 50) {
+    goToPage(currentPage + 1);
+  } else if (touchDiff < -50) {
+    goToPage(currentPage - 1);
+  }
 });
