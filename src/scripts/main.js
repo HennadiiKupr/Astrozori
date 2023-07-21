@@ -120,6 +120,7 @@ slider.addEventListener('touchmove', (e) => {
 
 slider.addEventListener('touchend', () => {
   const touchDiff = touchStartX - touchEndX;
+  console.log(touchDiff)
 
   if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
     if (touchDiff > 0) {
