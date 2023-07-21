@@ -68,18 +68,22 @@ fifthService.addEventListener('change', function() {
 });
 
 const slider = document.querySelector('.slider');
+console.log({slider})
 const slides = document.querySelectorAll('.slide');
+console.log({slides})
 const pagination = document.querySelector('.pagination');
 
 const totalSlides = slides.length;
 const slidesPerPage = 1;
 let currentPage = 0;
 
-const SWIPE_THRESHOLD = 100;
+const SWIPE_THRESHOLD = 20;
 
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
+  console.log({offset})
   slider.style.transform = `translateX(-${offset * 358}px)`;
+  console.log({slider})
 }
 
 function updatePagination() {
@@ -91,6 +95,7 @@ function updatePagination() {
 
 function goToPage(page) {
   currentPage = Math.max(0, Math.min(page, Math.ceil(totalSlides / slidesPerPage) - 1));
+  console.log({currentPage})
   updateSlider();
   updatePagination();
 }
@@ -112,17 +117,19 @@ let touchEndX = 0;
 
 slider.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
+  console.log({touchStartX})
 });
 
 slider.addEventListener('touchmove', (e) => {
+  console.log({touchEndX})
   touchEndX = e.touches[0].clientX;
 });
 
 slider.addEventListener('touchend', () => {
   const touchDiff = touchStartX - touchEndX;
-  console.log(touchDiff)
+  console.log({touchDiff})
 
-  if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
+  if (touchDiff > SWIPE_THRESHOLD) {
     if (touchDiff > 0) {
       goToPage(currentPage + 1);
     } else {
