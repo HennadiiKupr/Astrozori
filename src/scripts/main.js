@@ -68,22 +68,18 @@ fifthService.addEventListener('change', function() {
 });
 
 const slider = document.querySelector('.slider');
-console.log({slider})
 const slides = document.querySelectorAll('.slide');
-console.log({slides})
 const pagination = document.querySelector('.pagination');
 
 const totalSlides = slides.length;
 const slidesPerPage = 1;
 let currentPage = 0;
 
-const SWIPE_THRESHOLD = 20;
+const SWIPE_THRESHOLD = 100;
 
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
-  console.log({offset})
   slider.style.transform = `translateX(-${offset * 358}px)`;
-  console.log({slider})
 }
 
 function updatePagination() {
@@ -95,7 +91,6 @@ function updatePagination() {
 
 function goToPage(page) {
   currentPage = Math.max(0, Math.min(page, Math.ceil(totalSlides / slidesPerPage) - 1));
-  console.log({currentPage})
   updateSlider();
   updatePagination();
 }
@@ -113,31 +108,35 @@ setupPagination();
 updatePagination();
 
 let touchStartX = 0;
-let touchEndX = 0;
 
 slider.addEventListener('touchstart', (e) => {
   touchStartX = e.touches[0].clientX;
-  console.log({touchStartX})
 });
 
 slider.addEventListener('touchmove', (e) => {
-  console.log({touchEndX})
-  touchEndX = e.touches[0].clientX;
+  const touchMoveX = e.touches[0].clientX;
+  const touchDiff = touchStartX - touchMoveX;
+
+  if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
+    slider.style.transition = 'transform 0s'; // Зупиняємо анімацію
+    const offset = currentPage * slidesPerPage;
+    slider.style.transform = `translateX(-${offset * 358 - touchDiff}px)`; // Зміщуємо слайдер за допомогою touchDiff
+  }
 });
 
-slider.addEventListener('touchend', () => {
+slider.addEventListener('touchend', (e) => {
+  slider.style.transition = 'transform 0.3s ease-in-out'; // Повертаємо анімацію
+  const touchEndX = e.changedTouches[0].clientX;
   const touchDiff = touchStartX - touchEndX;
-  console.log({touchDiff})
 
-  if (touchDiff > SWIPE_THRESHOLD) {
+  if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
     if (touchDiff > 0) {
       goToPage(currentPage + 1);
     } else {
       goToPage(currentPage - 1);
     }
+  } else {
+    // Якщо руху недостатньо для зміни слайду, то просто оновлюємо сторінку слайдера
+    updateSlider();
   }
-
-  // Скидаємо значення touchStartX та touchEndX
-  touchStartX = 0;
-  touchEndX = 0;
 });
