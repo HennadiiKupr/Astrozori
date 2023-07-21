@@ -2,7 +2,7 @@
   margin: 0 auto;
 
   @include onMobile {
-    padding: 0 $padding-mobile;
+    padding: 0 $padding-mobile 24px;
     max-width: $max-width-mobile;
   }
 

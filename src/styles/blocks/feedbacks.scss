@@ -1,0 +1,25 @@
+.feedbacks {
+  position: relative;
+
+  &__header {
+    &-right-line,
+    &-left-line {
+      top: 20.5px;
+    }
+
+    width: 100px;
+
+    margin: 0 auto 32px;
+  }
+
+  &__list {
+    height: 257px;
+    margin-bottom: 32px;
+  }
+
+  &__content {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+}

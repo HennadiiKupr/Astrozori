@@ -31,3 +31,11 @@ p, span, a, li, td, th {
     color: #2B2925;
   }
 }
+
+*:focus {
+  outline: none;
+}
+
+a, button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent; /* Для WebKit (Chrome, Safari) */
+}

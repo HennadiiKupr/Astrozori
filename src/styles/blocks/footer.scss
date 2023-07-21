@@ -1,21 +1,24 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+  }
 
-  &__sertificates {
+  &__certificates {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin: 0, auto;
+    margin: auto;
 
     &-1 {
       width: 286px;
       height: 204px;
       border-radius: 16px;
       margin-bottom: 24px;
+      box-shadow: 0px 12.782122611999512px 19.17318344116211px -12.782122611999512px #3B383840;
     }
 
     &-2 {
@@ -23,6 +26,7 @@
       height: 164px;
       border-radius: 16px;
       margin-bottom: 64px;
+      box-shadow: 0px 10.32402229309082px 15.48603343963623px -10.32402229309082px #3B383840;
     }
   }
 
@@ -32,47 +36,66 @@
 
   &__contacts {
     display: flex;
-    justify-content: space-around;
     width: 100%;
+    align-items: flex-end;
 
     &-licence {
       display: flex;
       align-items: center;
+      font-family: 'Ledger', 'Times New Roman', Times, serif;
       font-size: 8px;
       font-weight: 400;
       line-height: 11px;
+      text-align: left;
+      margin-right: 52.8px;
 
       &-icon {
-        width: 10px;
-        height: 10px;
-        margin-right: 3px;
+        @include square(8px);
+        margin-right: 2px;
       }
     }
 
     &-icons {
+      width: 80px;
+      height: 32px;
+      position: relative;
       &-instagram {
-        width: 29px;
-        height: 29px;
+        @include square(32px);
         margin-right: 16px;
       }
 
       &-telegram {
-        width: 32px;
-        height: 32px;
+        @include square(32px);
       }
+
+      margin-right: 37px;
     }
 
     &-designer {
-      display: flex;
-      align-items: center;
+      font-family: 'Ledger', 'Times New Roman', Times, serif;
       font-size: 8px;
       font-weight: 400;
       line-height: 11px;
+      text-align: left;
       text-transform: uppercase;
+      color: #40392A;
+      ;
     }    
   }
 
-  &__links {
-    color: #fff
+  &__link-instagram {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include square(32px);
+  }
+
+  &__link-telegram {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include square(32px);
   }
 }
