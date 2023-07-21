@@ -2,11 +2,14 @@
   font-family: 'Cormorant Infant', Georgia, 'Times New Roman', serif;
   scroll-behavior: smooth;
   color: $c_main;
-  position: relative;
-
+  overflow: hidden;
+  position: fixed;
+  
   &__body {
     background-image: url("../images/background-mobile.jpg");
     background-position: -390px 804px;
+    overflow: hidden;
+    position: fixed;
   }
 
   &__body--with-menu {
