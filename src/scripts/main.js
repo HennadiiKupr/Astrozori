@@ -75,7 +75,7 @@ const totalSlides = slides.length;
 const slidesPerPage = 1;
 let currentPage = 0;
 
-const SWIPE_THRESHOLD = 150; // Збільшимо значення порогу для змаху
+const SWIPE_THRESHOLD = 100;
 
 function updateSlider() {
   const offset = currentPage * slidesPerPage;
@@ -107,27 +107,21 @@ function setupPagination() {
 setupPagination();
 updatePagination();
 
-// Swipe Handling
-let touchStartX = 0;
-let touchEndX = 0;
+let pointerStartX = 0;
 
-slider.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
+slider.addEventListener('pointerdown', (e) => {
+  pointerStartX = e.clientX;
 });
 
-slider.addEventListener('touchmove', (e) => {
-  e.preventDefault(); // Запобігання "Rubber Band" ефекту
-});
+slider.addEventListener('pointerup', (e) => {
+  const pointerEndX = e.clientX;
+  const pointerDiff = pointerStartX - pointerEndX;
 
-slider.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].clientX;
-  const touchDiff = Math.abs(touchStartX - touchEndX); // Отримаємо позитивне значення різниці
-
-  if (touchDiff > SWIPE_THRESHOLD) {
-    if (touchEndX < touchStartX) {
-      goToPage(currentPage + 1); // Змах вліво
+  if (Math.abs(pointerDiff) > SWIPE_THRESHOLD) {
+    if (pointerDiff > 0) {
+      goToPage(currentPage + 1);
     } else {
-      goToPage(currentPage - 1); // Змах вправо
+      goToPage(currentPage - 1);
     }
   }
 });
