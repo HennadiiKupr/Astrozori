@@ -6,7 +6,6 @@ window.addEventListener('change', () => {
     document.body.classList.add('page__body--with-menu');
     window.location.hash = '#menu';
   } else if (window.location.hash === '#menu') {
-    console.log(132)
     document.body.classList.remove('page__body--with-menu');
     window.location.hash = ''
   } else {
@@ -68,7 +67,9 @@ fifthService.addEventListener('change', function() {
 });
 
 const slider = document.querySelector('.slider');
+console.log(slider)
 const slides = document.querySelectorAll('.slide');
+console.log(slides)
 const pagination = document.querySelector('.pagination');
 
 const totalSlides = slides.length;
@@ -109,23 +110,24 @@ updatePagination();
 
 let touchStartX = 0;
 
-slider.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[currentPage].clientX;
+console.log(slides, slides[currentPage])
+slides[currentPage].addEventListener('touchstart', (e) => {
+  console.log(e.touches)
+  touchStartX = e.touches[0].clientX;
 });
 
-slider.addEventListener('touchmove', (e) => {
-  const touchMoveX = e.touches[currentPage].clientX;
+slides[currentPage].addEventListener('touchend', (e) => {
+  console.log(e)
+  const touchMoveX = e.touches[0].clientX;
   const touchDiff = touchStartX - touchMoveX;
 
   if (Math.abs(touchDiff) > SWIPE_THRESHOLD) {
-    slider.style.transition = 'transform 0s'; // Зупиняємо анімацію
     const offset = currentPage * slidesPerPage;
     slider.style.transform = `translateX(-${offset * 358 - touchDiff}px)`; // Зміщуємо слайдер за допомогою touchDiff
   }
 });
 
-slider.addEventListener('touchend', (e) => {
-  slider.style.transition = 'transform 0.3s ease-in-out'; // Повертаємо анімацію
+slides[currentPage].addEventListener('touchend', (e) => {
   const touchEndX = e.changedTouches[0].clientX;
   const touchDiff = touchStartX - touchEndX;
 
@@ -135,8 +137,5 @@ slider.addEventListener('touchend', (e) => {
     } else {
       goToPage(currentPage - 1);
     }
-  } else {
-    // Якщо руху недостатньо для зміни слайду, то просто оновлюємо сторінку слайдера
-    updateSlider();
   }
 });
