@@ -6,6 +6,7 @@ window.addEventListener('change', () => {
     document.body.classList.add('page__body--with-menu');
     window.location.hash = '#menu';
   } else if (window.location.hash === '#menu') {
+    console.log(132)
     document.body.classList.remove('page__body--with-menu');
     window.location.hash = ''
   } else {
