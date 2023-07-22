@@ -1,6 +1,10 @@
 .menu {
   height: 100vh;
 
+  @include onNotebook {
+    display: none;
+  }
+
   background-image: url("../images/menu-background.jpg");
   z-index: 1;
   background-position-y: bottom;

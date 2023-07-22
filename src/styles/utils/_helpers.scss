@@ -1,0 +1,28 @@
+.first {
+  transform: translateX(558px);
+  transition: all 0.3s;
+}
+
+.second {
+  transform: translateX(256px);
+  transition: all 0.3s;
+
+}
+
+.third {
+  transform: translateX(0);
+
+  transition: all 0.3s;
+
+}
+
+.fourth {
+  transform: translateX(-256px);
+  transition: all 0.3s;
+
+}
+
+.fifth {
+  transform: translateX(-558px);
+  transition: all 0.3s;
+}

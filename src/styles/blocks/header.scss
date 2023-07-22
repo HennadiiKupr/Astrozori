@@ -6,6 +6,11 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  @include onNotebook {
+    background-image: url("../images/main-desktop.jpeg");
+    background-position: 0px -25px;
+  }
+
   height: 100vh;
 
   &__top-actions {
@@ -34,6 +39,10 @@
     @media screen and (min-height: 860px) {
       height: 110px;
     }
+
+    @include onNotebook {
+      height: 104px;
+    }
   }
 
   &__title {
@@ -50,6 +59,15 @@
     margin: 0 auto;
 
     width: 285px;
+
+    @include onNotebook {
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.12em;
+
+      width: 780px;
+      padding: 24px 0 16px;
+    }
   }
 
   &__subtitle {
@@ -58,5 +76,11 @@
     line-height: 15px;
     font-style: italic;
     color: $c_header;
+    
+    @include onNotebook {
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.12em;
+    }
   }
 }

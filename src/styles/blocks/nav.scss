@@ -1,0 +1,44 @@
+.nav {
+  display: none;
+
+  @include onNotebook {
+    display: block;
+  }
+
+  &__list {
+    font-family: Cormorant Infant;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.08em;
+    text-align: left;
+
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    height: 87px;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s;
+
+    &:hover {
+      font-family: Cormorant Infant;
+      font-weight: 700;
+    }
+  }
+
+  &__item {
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

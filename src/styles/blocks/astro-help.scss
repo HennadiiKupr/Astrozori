@@ -2,6 +2,10 @@
   position: relative;
   height: 522px;
 
+  @include onNotebook {
+    height: 772px;
+  }
+
   &__header {
     text-align: center;
     margin-bottom: 16px;
@@ -9,11 +13,24 @@
     &-right-line {
       top: 20.5px
     }
+
+    @include onNotebook {
+      margin-bottom: 64px;
+
+      &-left-line,
+      &-right-line {
+        top: 41.5px
+      }
+    }
   }
 
   &__content-wrapper {
     display: flex;
     gap: 6px;
+
+    @include onNotebook {
+      gap: 24px;
+    }
   }
 
   &__calender {
@@ -25,6 +42,14 @@
     height: 400px;
     margin: 16px 0 32px -197px;
     transform: scale(1.1);
+
+    @include onNotebook {
+      background-position: 100%;
+      transform: scale(1);
+      width: 628;
+      height: 624;
+      margin: 0;
+    }
   }
 
   &__list {
@@ -38,6 +63,16 @@
     line-height: 19px;
     letter-spacing: 0.04em;
     text-align: left;
+
+    @include onNotebook {
+      width: 628px;
+      height: 624px;
+
+      font-size: 24px;
+      line-height: 36px;
+
+      padding: 90px 0;
+    }
   }
 
   &__item {
@@ -45,18 +80,34 @@
 
     margin-bottom: 16px;
 
+    @include onNotebook {
+      margin-bottom: 32px;
+    }
+
     &--2,
     &--6 {
       margin-left: 16px;
+
+      @include onNotebook {
+        margin-left: 40px;
+      }
     }
 
     &--3, 
     &--5 {
       margin-left: 32px;
+
+      @include onNotebook {
+        margin-left: 80px;
+      }
     }
 
     &--4 {
       margin-left: 48px;
+
+      @include onNotebook {
+        margin-left: 104px;
+      }
     }
   }
 }

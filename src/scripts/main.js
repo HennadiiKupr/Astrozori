@@ -139,3 +139,136 @@ slider.addEventListener('touchend', (e) => {
     goToPage(currentPage - 1);
   }
 });
+
+const serviceSlider = document.querySelector('.service__slider');
+const serviceSlides = document.querySelectorAll('.service__slide');
+const servicePagination = document.querySelector('.services__pagination');
+
+const totalServiceSlides = slides.length;
+const serviceSlidesPerPage = 3;
+let currentSlide = 2;
+
+function updateSlider() {
+  const offset = currentPage * slidesPerPage;
+  slider.style.transform = `translateX(-${offset * 358}px)`;
+}
+
+function updatePagination() {
+  const dots = Array.from(pagination.children);
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentPage);
+  });
+}
+
+function goToPage(page) {
+  currentPage = Math.max(0, Math.min(page, Math.ceil(totalSlides / slidesPerPage) - 1));
+  updateSlider();
+  updatePagination();
+  updateVisibleDots();
+}
+
+setupPagination();
+updatePagination();
+updateVisibleDots(); 
+
+const firstServiceSlide = document.querySelector('.first-slide')
+const servicesSlides = document.querySelectorAll('.services__slide');
+const sliderHeaders = [];
+const sliderTexts = [];
+const sliderPrices = [];
+
+servicesSlides.forEach((slide, index) => {
+  sliderHeaders.push(slide.querySelector('h2'));
+  sliderTexts.push(slide.querySelector('.services__slide-text'));
+  sliderPrices.push(slide.querySelector('.services__slide-price'));
+  console.log(sliderPrices)
+
+  slide.addEventListener('click', () => {
+    for (let i = 0; i < servicesSlides.length; i++) {
+      servicesSlides[i].classList.remove(
+        'services__slide--is-active', 
+        'services__slide--next', 
+        'services__slide--prev', 
+        'first', 
+        'second', 
+        'third', 
+        'fourth', 
+        'fifth'
+      );
+
+      sliderHeaders[i].classList.remove(
+        'services__slide-header--is-active', 
+        'services__slide-header--near', 
+      );
+
+      sliderTexts[i].classList.remove(
+        'services__slide-text--is-active', 
+        'services__slide-text--near', 
+      );
+
+      sliderPrices[i].classList.remove(
+        'services__slide-price--is-active', 
+        'services__slide-price--near', 
+      );
+    }
+
+    switch(index) {
+      case 0:
+        for (const slide of servicesSlides) {
+          slide.classList.add('first')
+        }
+
+        break;
+
+      case 1:
+        for (const slide of servicesSlides) {
+          slide.classList.add('second')
+        }
+
+        break;
+
+      case 2:
+        for (const slide of servicesSlides) {
+          slide.classList.add('third')
+        }
+
+        break;
+
+      case 3:
+        for (const slide of servicesSlides) {
+          slide.classList.add('fourth')
+        }
+
+        break;
+
+      case 4:
+        for (const slide of servicesSlides) {
+          slide.classList.add('fifth')
+        }
+
+        break;
+
+      default:
+        break;
+    }
+
+    slide.classList.add('services__slide--is-active');
+    sliderHeaders[index].classList.add('services__slide-header--is-active');
+    sliderTexts[index].classList.add('services__slide-text--is-active');
+    sliderPrices[index].classList.add('services__slide-price--is-active');
+
+    if (index > 0) {
+      servicesSlides[index - 1].classList.add('services__slide--prev');
+      sliderHeaders[index - 1].classList.add('services__slide-header--near');
+      sliderTexts[index - 1].classList.add('services__slide-text--near');
+      sliderPrices[index - 1].classList.add('services__slide-price--near');
+    }
+
+    if (index < servicesSlides.length - 1) {
+      servicesSlides[index + 1].classList.add('services__slide--next');
+      sliderHeaders[index + 1].classList.add('services__slide-header--near');
+      sliderTexts[index + 1].classList.add('services__slide-text--near');
+      sliderPrices[index + 1].classList.add('services__slide-price--near');
+    }
+  });
+});

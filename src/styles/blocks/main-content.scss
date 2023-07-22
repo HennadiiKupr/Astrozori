@@ -1,5 +1,10 @@
 .main-content {
+  overflow: hidden;
   &__section {
     margin-bottom: 64px;
+
+    @include onNotebook {
+      margin-bottom: 120px;
+    }
   }
 }
