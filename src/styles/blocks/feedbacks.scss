@@ -75,22 +75,28 @@
   }
 
   &__pagination {
-      margin: auto;
+    margin: auto;
+    height: 20px;
+    width: 80px;
+    position: relative;
+
+    overflow: hidden;
+
+    &-wrapper {
+      width: 200px;
       height: 20px;
-      width: 80px;
-      position: relative;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
 
-      overflow: hidden;
-
-      &-wrapper {
-        width: 200px;
-        height: 20px;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
+    &--mobile {
+      @include onMobile {
+        display: none
       }
+    }
     
     &-item {
       @include square(14px);
