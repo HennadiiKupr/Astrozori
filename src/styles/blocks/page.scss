@@ -3,10 +3,16 @@
   scroll-behavior: smooth;
   color: $c_main;
   position: relative;
+  overflow-x: hidden;
 
   &__body {
     background-image: url("../images/background-mobile.jpg");
-    background-position: -390px 804px;
+    background-position: -390px 100vh;
+
+    @include onNotebook {
+      background-image: url("../images/background-desktop.jpg");
+      background-position: 0px 100vh;
+    }
   }
 
   &__body--with-menu {
@@ -29,5 +35,35 @@
 
   &__astro-help {
     margin-bottom: 16px;
+
+    @include onNotebook {
+      margin-bottom: 120px;
+    }
   }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+&::-webkit-scrollbar {
+  width: 0px; 
+}
+
+/* Сховати полоски прокрутки, коли елемент неактивний */
+&::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* Сховати стрілки у верхній та нижній частині полоски прокрутки */
+&::-webkit-scrollbar-button:start:decrement,
+&::-webkit-scrollbar-button:end:increment {
+  display: none;
+}
+
+/* Сховати полоску, яка показує поточну позицію прокрутки */
+&::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 }

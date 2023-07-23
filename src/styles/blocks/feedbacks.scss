@@ -4,12 +4,17 @@
   &__header {
     &-right-line,
     &-left-line {
-      top: 20.5px;
+      top: 41.5px;
     }
 
     width: 100px;
 
     margin: 0 auto 32px;
+
+    @include onNotebook {
+      width: 186px;
+      margin: 0 auto 64px;
+    }
   }
 
   &__list {
@@ -21,5 +26,97 @@
     flex-direction: column;
     align-items: center;
     display: flex;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+
+    &-container {
+      @include onMobile {
+        display: none;
+      }
+      height: 263px;
+      width: 2150px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+  };
+
+  &__slide {
+    background-image: url("../images/border.svg");
+    background-position: -8px;
+    position: relative;
+    padding: 24px 40px;
+    background-size: 428px 263px;
+
+    height: 263px;
+    width: 411px;
+
+    font-family: 'Ledger', 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+
+    &-name {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    &-text {
+      height: 126px;
+      font-size: 16px;
+      line-height: 21px;  
+      margin-bottom: 24px;
+    }
+  }
+
+  &__pagination {
+    margin: auto;
+    height: 20px;
+    width: 80px;
+    position: relative;
+
+    overflow: hidden;
+
+    &-wrapper {
+      width: 200px;
+      height: 20px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &--mobile {
+      @include onMobile {
+        display: none
+      }
+    }
+    
+    &-item {
+      @include square(14px);
+      background: linear-gradient(180deg, #F7EEDB 0%, #DFCBA3 100%);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &--invisible {
+        opacity: 0;
+        cursor: default;
+      }
+
+      &--is-active {
+        width: 20px;
+        height: 20px;
+        background: #DFCBA3;
+        border-radius: 6px;
+        transition: all 0.5s ease-in-out;
+      }
+    }
   }
 }

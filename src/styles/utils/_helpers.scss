@@ -1,0 +1,74 @@
+.first {
+  transform: translateX(558px);
+  transition: all 0.4s;
+}
+
+.second {
+  transform: translateX(256px);
+  transition: all 0.4s;
+}
+
+.third {
+  transform: translateX(0);
+  transition: all 0.4s;
+}
+
+.fourth {
+  transform: translateX(-256px);
+  transition: all 0.4s;
+}
+
+.fifth {
+  transform: translateX(-558px);
+  transition: all 0.4s;
+}
+
+.firstPaginator {
+  transform: translateX(0px);
+  transition: all 0.4s;
+}
+
+.secondPaginator {
+  transform: translateX(-30px);
+  transition: all 0.4s;
+}
+
+.thirdPaginator {
+  transform: translateX(-60px);
+  transition: all 0.4s;
+}
+
+.fourthPaginator {
+  transform: translateX(-90px);
+  transition: all 0.4s;
+}
+
+.fifthPaginator {
+  transform: translateX(-120px);
+  transition: all 0.4s;
+}
+
+.firstFeedback {
+  transform: translateX(860px);
+  transition: all 0.4s;
+}
+
+.secondFeedback {
+  transform: translateX(430px);
+  transition: all 0.4s;
+}
+
+.thirdFeedback {
+  transform: translateX(0);
+  transition: all 0.4s;
+}
+
+.fourthFeedback {
+  transform: translateX(-430px);
+  transition: all 0.4s;
+}
+
+.fifthFeedback {
+  transform: translateX(-860px);
+  transition: all 0.4s;
+}

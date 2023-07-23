@@ -4,6 +4,11 @@
     flex-direction: column;
     align-items: center;
     padding-top: 24px;
+
+    @include onNotebook {
+      padding-top: 40px;
+      padding-bottom: 24px;
+    }
   }
 
   &__certificates {
@@ -13,12 +18,39 @@
 
     margin: auto;
 
+    &--mobile {
+      @include onNotebook {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    @include onNotebook {
+      flex-direction: row;
+      margin-bottom: 85px;
+
+      gap: 24px;
+    }
+
     &-1 {
       width: 286px;
       height: 204px;
       border-radius: 16px;
       margin-bottom: 24px;
       box-shadow: 0px 12.782122611999512px 19.17318344116211px -12.782122611999512px #3B383840;
+
+      @include onNotebook {
+        width: 411px;
+        height: 294px;
+
+        border-radius: 23px;
+        margin-bottom: 0;
+      }
     }
 
     &-2 {
@@ -27,18 +59,54 @@
       border-radius: 16px;
       margin-bottom: 64px;
       box-shadow: 0px 10.32402229309082px 15.48603343963623px -10.32402229309082px #3B383840;
+
+      @include onNotebook {
+        width: 411px;
+        height: 294px;
+
+        border-radius: 23px;
+        margin-bottom: 0px;
+      }
     }
   }
 
   &__logo {
     margin-bottom: 64px;
     text-decoration: none;
+
+    @include onNotebook {
+      margin-bottom: 84px;
+
+      width: 108px;
+      height: 72px;
+    }
+
+    &-text {
+      @include onNotebook {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0.16em;
+        text-align: center;
+      }
+    }
+
+    &-image {
+      @include onNotebook {
+        width: 72px;
+        height: 52px;
+      }
+    }
   }
 
   &__contacts {
     display: flex;
     width: 100%;
     align-items: flex-end;
+
+    @include onNotebook {
+      justify-content: space-between;
+    }
 
     &-licence {
       display: flex;
@@ -50,9 +118,21 @@
       text-align: left;
       margin-right: 52.8px;
 
+      @include onNotebook {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-right: 40px
+      }
+
       &-icon {
         @include square(8px);
         margin-right: 2px;
+
+        @include onNotebook {
+          @include square(22px)
+        }
       }
     }
 
@@ -63,13 +143,27 @@
       &-instagram {
         @include square(32px);
         margin-right: 16px;
+
+        @include onNotebook {
+          @include square(40px)
+        }
       }
 
       &-telegram {
         @include square(32px);
+
+        @include onNotebook {
+          @include square(40px)
+        }
       }
 
       margin-right: 37px;
+
+      @include onNotebook {
+        margin-right: 0px;
+        height: 40px;
+        width: 96px;
+      }
     }
 
     &-designer {
@@ -81,6 +175,12 @@
       text-transform: uppercase;
       color: #40392A;
       text-decoration: none;
+
+      @include onNotebook {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0em;
+      }
     }    
   }
 
@@ -90,6 +190,10 @@
     left: 0;
 
     @include square(32px);
+
+    @include onNotebook {
+      @include square(40px)
+    }
   }
 
   &__link-telegram {
@@ -98,5 +202,9 @@
     right: 0;
 
     @include square(32px);
+
+    @include onNotebook {
+      @include square(40px)
+    }
   }
 }

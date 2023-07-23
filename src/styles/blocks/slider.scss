@@ -3,6 +3,10 @@
   width: 358px; 
   height: 257px; 
   overflow: hidden;
+
+  @include onNotebook {
+    display: none;
+  }
 }
 
 .slider {
