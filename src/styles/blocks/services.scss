@@ -136,6 +136,25 @@
     }
   }
 
+  &__buttons-paginator {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__btn-prev {
+    background-image: url("../images/стрілка.svg");
+    width: 85px;
+    height: 32px;
+    transform: scale(-1);
+  }
+
+  &__btn-next {
+    background-image: url("../images/стрілка.svg");
+    width: 85px;
+    height: 32px;
+  }
+
   &__slider {
     display: flex;
     gap: 24px;

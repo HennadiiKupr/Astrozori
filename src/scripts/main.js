@@ -140,15 +140,131 @@ slider.addEventListener('touchend', (e) => {
 });
 
 const servicesSlides = document.querySelectorAll('.services__slide');
-const sliderHeaders = [];
-const sliderTexts = [];
-const sliderPrices = [];
+const prevButtonServices = document.querySelector('.services__btn-prev');
+const nextButtonServices = document.querySelector('.services__btn-next');
+let currentIndex = 2;
+
+// Previous button click event
+prevButtonServices.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = servicesSlides.length - 1;
+  }
+
+  paginator.forEach((item) => {
+    item.classList.remove(
+      'firstPaginator',
+      'secondPaginator',
+      'thirdPaginator',
+      'fourthPaginator',
+      'fifthPaginator'
+    )
+  })
+
+  switch(currentIndex) {
+    case 0:
+      for (const p of paginator) {
+        p.classList.add('firstPaginator')
+      }
+
+      break;
+
+    case 1:
+      for (const p of paginator) {
+        p.classList.add('secondPaginator')
+      }
+
+      break;
+
+    case 2:
+      for (const p of paginator) {
+        p.classList.add('thirdPaginator')
+      }
+
+      break;
+
+    case 3:
+      for (const p of paginator) {
+        p.classList.add('fourthPaginator')
+      }
+
+      break;
+
+    case 4:
+      for (const p of paginator) {
+        p.classList.add('fifthPaginator')
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  updateServiceSlider();
+});
+
+// Next button click event
+nextButtonServices.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= servicesSlides.length) {
+    currentIndex = 0;
+  }
+
+  paginator.forEach((item) => {
+    item.classList.remove(
+      'firstPaginator',
+      'secondPaginator',
+      'thirdPaginator',
+      'fourthPaginator',
+      'fifthPaginator'
+    )
+  })
+
+  switch(currentIndex) {
+    case 0:
+      for (const p of paginator) {
+        p.classList.add('firstPaginator')
+      }
+
+      break;
+
+    case 1:
+      for (const p of paginator) {
+        p.classList.add('secondPaginator')
+      }
+
+      break;
+
+    case 2:
+      for (const p of paginator) {
+        p.classList.add('thirdPaginator')
+      }
+
+      break;
+
+    case 3:
+      for (const p of paginator) {
+        p.classList.add('fourthPaginator')
+      }
+
+      break;
+
+    case 4:
+      for (const p of paginator) {
+        p.classList.add('fifthPaginator')
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  updateServiceSlider();
+});
 
 servicesSlides.forEach((slide, index) => {
-  sliderHeaders.push(slide.querySelector('h2'));
-  sliderTexts.push(slide.querySelector('.services__slide-text'));
-  sliderPrices.push(slide.querySelector('.services__slide-price'));
-
   slide.addEventListener('click', () => {
     for (let i = 0; i < servicesSlides.length; i++) {
       servicesSlides[i].classList.remove(
@@ -248,7 +364,6 @@ servicesSlides.forEach((slide, index) => {
 });
 
 const paginator = document.querySelectorAll('.services__pagination-item');
-let currentIndex = 0;
 const paginationArray = Array.from(paginator);
 paginationArray.shift();
 paginationArray.pop();
@@ -498,6 +613,130 @@ servicesSlides.forEach((slide, index) => {
 
 
 const feedbacksSlides = document.querySelectorAll('.feedbacks__slide');
+const prevButton = document.querySelector('.feedbacks__btn-prev');
+const nextButton = document.querySelector('.feedbacks__btn-next');
+let currentFeedbackIndex = 2
+
+// Previous button click event
+prevButton.addEventListener('click', () => {
+  currentFeedbackIndex--;
+  if (currentFeedbackIndex < 0) {
+    currentFeedbackIndex = feedbacksSlides.length - 1;
+  }
+
+  feedbackPaginator.forEach((item) => {
+    item.classList.remove(
+      'firstPaginator',
+      'secondPaginator',
+      'thirdPaginator',
+      'fourthPaginator',
+      'fifthPaginator'
+    )
+  })
+
+  switch(currentFeedbackIndex) {
+    case 0:
+      for (const p of feedbackPaginator) {
+        p.classList.add('firstPaginator')
+      }
+
+      break;
+
+    case 1:
+      for (const p of feedbackPaginator) {
+        p.classList.add('secondPaginator')
+      }
+
+      break;
+
+    case 2:
+      for (const p of feedbackPaginator) {
+        p.classList.add('thirdPaginator')
+      }
+
+      break;
+
+    case 3:
+      for (const p of feedbackPaginator) {
+        p.classList.add('fourthPaginator')
+      }
+
+      break;
+
+    case 4:
+      for (const p of feedbackPaginator) {
+        p.classList.add('fifthPaginator')
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  updateFeedbackSlider();
+});
+
+// Next button click event
+nextButton.addEventListener('click', () => {
+  currentFeedbackIndex++;
+  if (currentFeedbackIndex >= feedbacksSlides.length) {
+    currentFeedbackIndex = 0;
+  }
+
+  feedbackPaginator.forEach((item) => {
+    item.classList.remove(
+      'firstPaginator',
+      'secondPaginator',
+      'thirdPaginator',
+      'fourthPaginator',
+      'fifthPaginator'
+    )
+  })
+
+  switch(currentFeedbackIndex) {
+    case 0:
+      for (const p of feedbackPaginator) {
+        p.classList.add('firstPaginator')
+      }
+
+      break;
+
+    case 1:
+      for (const p of feedbackPaginator) {
+        p.classList.add('secondPaginator')
+      }
+
+      break;
+
+    case 2:
+      for (const p of feedbackPaginator) {
+        p.classList.add('thirdPaginator')
+      }
+
+      break;
+
+    case 3:
+      for (const p of feedbackPaginator) {
+        p.classList.add('fourthPaginator')
+      }
+
+      break;
+
+    case 4:
+      for (const p of feedbackPaginator) {
+        p.classList.add('fifthPaginator')
+      }
+
+      break;
+
+    default:
+      break;
+  }
+
+  updateFeedbackSlider();
+});
+
 
 feedbacksSlides.forEach((slide, index) => {
   slide.addEventListener('click', () => {
@@ -554,7 +793,6 @@ feedbacksSlides.forEach((slide, index) => {
 });
 
 const feedbackPaginator = document.querySelectorAll('.feedbacks__pagination-item');
-let currentFeedbackIndex = 0;
 const feedbackPaginatorArray = Array.from(feedbackPaginator);
 feedbackPaginatorArray.shift();
 feedbackPaginatorArray.pop();
