@@ -7,8 +7,8 @@
   background-position: center;
 
   @include onNotebook {
-    background-image: url("../images/main-desktop.jpeg");
-    background-position: 0px -25px;
+    background-position-y: -25px;
+    background-position-x: center;
   }
 
   height: 100vh;
