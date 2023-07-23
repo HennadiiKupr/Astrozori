@@ -229,7 +229,7 @@
       display: none;
       visibility: hidden;
 
-      @include onMobile {
+      @include onNotebook {
         display: block;
         visibility: visible;
       }

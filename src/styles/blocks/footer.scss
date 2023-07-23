@@ -30,7 +30,7 @@
       visibility: hidden;
 
       @include onNotebook {
-        display: block;
+        display: flex;
         visibility: visible;
       }
     }
