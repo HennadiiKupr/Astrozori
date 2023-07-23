@@ -6,8 +6,7 @@
 
   &__body {
     background-image: url("../images/background-mobile.jpg");
-    background-attachment: fixed;
-    background-position: -390px 209vh;
+    background-position: 0px 96vh;
 
     @include onNotebook {
       background-image: url("../images/background-desktop.jpg");
