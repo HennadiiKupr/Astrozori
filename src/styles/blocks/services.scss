@@ -144,9 +144,12 @@
     height: 460px;
 
     &-container {
-      @include onMobile {
-        display: none;
-        visibility: hidden;
+      display: none;
+      visibility: hidden;
+
+      @include onNotebook {
+        display: block;
+        visibility: visible;
       }
       height: 460px;
       width: 2405px;
@@ -223,9 +226,12 @@
     }
 
     &--mobile {
+      display: none;
+      visibility: hidden;
+
       @include onMobile {
-        display: none;
-        visibility: hidden
+        display: block;
+        visibility: visible;
       }
     }
     

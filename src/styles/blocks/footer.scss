@@ -26,9 +26,12 @@
     }
 
     &--desktop {
-      @include onMobile {
-        display: none;
-        visibility: hidden;
+      display: none;
+      visibility: hidden;
+
+      @include onNotebook {
+        display: block;
+        visibility: visible;
       }
     }
 

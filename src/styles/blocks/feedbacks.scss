@@ -35,15 +35,18 @@
     align-items: center;
 
     &-container {
-      @include onMobile {
-        display: none;
-        visibility: hidden;
-      }
+      display: none;
+      visibility: hidden;
       height: 263px;
       width: 2150px;
       position: relative;
       overflow: hidden;
       margin-bottom: 32px;
+
+      @include onNotebook {
+        display: block;
+        visibility: visible;
+      }
     }
   };
 
@@ -94,9 +97,12 @@
     }
 
     &--mobile {
-      @include onMobile {
-        display: none;
-        visibility: hidden
+      display: none;
+      visibility: hidden;
+
+      @include onNotebook {
+        display: block;
+        visibility: visible;
       }
     }
     
