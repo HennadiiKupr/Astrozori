@@ -57,12 +57,12 @@
     }
 
     &--desktop {
-      display: block;
-      visibility: visible;
+      display: none;
+      visibility: hidden;
 
-      @include onMobile {
-        display: none;
-        visibility: hidden;
+      @include onNotebook {
+        display: block;
+        visibility: visible;
       }
     }
   }
