@@ -35,6 +35,7 @@
       
       @include onNotebook {
         display: none;
+        visibility: hidden;
       }
     }
   }
@@ -131,6 +132,7 @@
 
     @include onNotebook {
       display: none;
+      visibility: hidden;
     }
   }
 
@@ -139,10 +141,12 @@
     gap: 24px;
     justify-content: center;
     align-items: center;
+    height: 460px;
 
     &-container {
       @include onMobile {
         display: none;
+        visibility: hidden;
       }
       height: 460px;
       width: 2405px;
@@ -158,8 +162,8 @@
     padding: 20.26px 12.07px 13.35px;
     position: relative;
 
-    height: 208px;
-    width: 234px;
+    height: 234px;
+    width: 208px;
 
     font-family: 'Ledger', 'Times New Roman', Times, serif;
     text-align: center;
@@ -175,21 +179,6 @@
       text-transform: uppercase;
 
       margin-bottom: 20.46px;
-
-      transition: all 0.5s;
-
-      &--near {
-        font-size: 15px;
-        line-height: 22px;
-
-        margin-bottom: 29.56px;
-      }
-
-      &--is-active {
-        font-size: 20px;
-        line-height: 30px;
-        margin-bottom: 40px;
-      }
     }
 
     &-text {
@@ -198,18 +187,7 @@
       line-height: 12px;
       letter-spacing: 0.04em;
       text-align: left;
-
-      transition: all 0.5s;
-      
-      &--near {
-        font-size: 12px;
-        line-height: 18px;
-      }
-
-      &--is-active {
-        font-size: 16px;
-        line-height: 24px;
-      }
+      padding: 0 8px;
     }
     
     &-price {
@@ -221,45 +199,8 @@
       text-align: left;
 
       position: absolute;
-      left: 99.1;
+      left: 82.1;
       bottom: 13.35;
-
-      transition: all 0.5s;
-
-      &--near {
-        font-size: 15px;
-        line-height: 22px;
-
-        bottom: 16.95;
-        left: 120.06;
-      }
-
-      &--is-active {
-        font-family: Cormorant Infant;
-        font-size: 20px;
-        line-height: 30px;
-
-        bottom: 24;
-        left: 164;
-      }
-    }
-
-    &--is-active {
-      width: 411px;
-      height: 460px;
-
-      padding: 40px 24px 24px;
-      transition: all 0.5s;
-    }
-
-    &--prev,
-    &--next {
-      transition: all 0.5s;
-
-      width: 302px;
-      height: 338px;
-
-      padding: 29.4px 12.59px 17.57px;
     }
   }
 
@@ -283,7 +224,8 @@
 
     &--mobile {
       @include onMobile {
-        display: none
+        display: none;
+        visibility: hidden
       }
     }
     

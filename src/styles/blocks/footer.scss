@@ -21,12 +21,14 @@
     &--mobile {
       @include onNotebook {
         display: none;
+        visibility: hidden;
       }
     }
 
     &--desktop {
       @include onMobile {
         display: none;
+        visibility: hidden;
       }
     }
 

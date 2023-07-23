@@ -6,7 +6,6 @@ window.addEventListener('change', () => {
     document.body.classList.add('page__body--with-menu');
     window.location.hash = '#menu';
   } else if (window.location.hash === '#menu') {
-    console.log(132)
     document.body.classList.remove('page__body--with-menu');
     window.location.hash = ''
   } else {
@@ -153,89 +152,97 @@ servicesSlides.forEach((slide, index) => {
   slide.addEventListener('click', () => {
     for (let i = 0; i < servicesSlides.length; i++) {
       servicesSlides[i].classList.remove(
-        'services__slide--is-active', 
-        'services__slide--next', 
-        'services__slide--prev', 
         'first', 
         'second', 
         'third', 
         'fourth', 
-        'fifth'
-      );
-
-      sliderHeaders[i].classList.remove(
-        'services__slide-header--is-active', 
-        'services__slide-header--near', 
-      );
-
-      sliderTexts[i].classList.remove(
-        'services__slide-text--is-active', 
-        'services__slide-text--near', 
-      );
-
-      sliderPrices[i].classList.remove(
-        'services__slide-price--is-active', 
-        'services__slide-price--near', 
+        'fifth',
+        'thirdRight',
+        'firstSlide',
+        'secondSlide',
+        'thirdSlide',
+        'fourthSlide',
+        'fifthSlide',
+        'firstSlidePrev',
+        'secondSlidePrev',
+        'thirdSlidePrev',
+        'fourthSlidePrev',
+        'secondSlideNext',
+        'thirdSlideNext',
+        'fourthSlideNext',
+        'fifthSlideNext'
       );
     }
 
     switch(index) {
       case 0:
-        for (const slide of servicesSlides) {
-          slide.classList.add('first')
+        for (let i = 0; i < servicesSlides.length; i++) {
+          if (i === 0) {
+            servicesSlides[i].classList.add('firstSlide')
+            continue;
+          } else if (i === 1) {
+            servicesSlides[i].classList.add('secondSlideNext')
+            continue;
+          } else {
+            servicesSlides[i].classList.add('first')
+          }   
         }
 
         break;
 
       case 1:
-        for (const slide of servicesSlides) {
-          slide.classList.add('second')
+        for (let i = 0; i < servicesSlides.length; i++) {
+          if (i === 0) {
+            servicesSlides[i].classList.add('firstSlidePrev');
+            continue;
+          } else if (i === 1) {
+            servicesSlides[i].classList.add('secondSlide');
+            continue;
+          } else if (i === 2) {
+            servicesSlides[i].classList.add('thirdSlideNext');
+            continue;
+          } else {
+            servicesSlides[i].classList.add('second')
+          }   
         }
 
         break;
 
       case 2:
-        for (const slide of servicesSlides) {
-          slide.classList.add('third')
+        for (let i = 0; i < servicesSlides.length; i++) {
+          if (i === 2) {
+            slide.classList.add('thirdSlide')
+          } else {
+            slide.classList.add('third')
+          }   
         }
 
         break;
 
       case 3:
-        for (const slide of servicesSlides) {
-          slide.classList.add('fourth')
+        for (let i = 0; i < servicesSlides.length; i++) {
+          if (i === 3) {
+            slide.classList.add('fourthSlide')
+          } else {
+            slide.classList.add('fourth')
+          }   
         }
-
         break;
 
       case 4:
-        for (const slide of servicesSlides) {
-          slide.classList.add('fifth')
+        for (let i = 0; i < servicesSlides.length; i++) {
+          if (i === 4) {
+            slide.classList.add('fifthSlide')
+          } else {
+            slide.classList.add('fifth')
+          }   
         }
+        break;
 
         break;
 
       default:
         break;
-    }
-
-    slide.classList.add('services__slide--is-active');
-    sliderHeaders[index].classList.add('services__slide-header--is-active');
-    sliderTexts[index].classList.add('services__slide-text--is-active');
-    sliderPrices[index].classList.add('services__slide-price--is-active');
-
-    if (index > 0) {
-      servicesSlides[index - 1].classList.add('services__slide--prev');
-      sliderHeaders[index - 1].classList.add('services__slide-header--near');
-      sliderTexts[index - 1].classList.add('services__slide-text--near');
-      sliderPrices[index - 1].classList.add('services__slide-price--near');
-    }
-
-    if (index < servicesSlides.length - 1) {
-      servicesSlides[index + 1].classList.add('services__slide--next');
-      sliderHeaders[index + 1].classList.add('services__slide-header--near');
-      sliderTexts[index + 1].classList.add('services__slide-text--near');
-      sliderPrices[index + 1].classList.add('services__slide-price--near');
     }
   });
 });
@@ -306,95 +313,120 @@ paginationArray.forEach((item, index) => {
 
 function updateServiceSlider() {
   servicesSlides.forEach((slide, index) => {
-    console.log(13)
     slide.classList.remove(
-      'services__slide--is-active',
-      'services__slide--next',
-      'services__slide--prev',
-      'first',
-      'second',
-      'third',
-      'fourth',
-      'fifth'
+      'first', 
+      'second', 
+      'third', 
+      'fourth', 
+      'fifth',
+      'thirdRight',
+      'firstSlide',
+      'secondSlide',
+      'thirdSlide',
+      'fourthSlide',
+      'fifthSlide',
+      'firstSlidePrev',
+      'secondSlidePrev',
+      'thirdSlidePrev',
+      'fourthSlidePrev',
+      'secondSlideNext',
+      'thirdSlideNext',
+      'fourthSlideNext',
+      'fifthSlideNext'
     );
 
-    sliderHeaders[index].classList.remove(
-      'services__slide-header--is-active',
-      'services__slide-header--near'
-    );
-
-    sliderTexts[index].classList.remove(
-      'services__slide-text--is-active',
-      'services__slide-text--near'
-    );
-
-    sliderPrices[index].classList.remove(
-      'services__slide-price--is-active',
-      'services__slide-price--near'
-    );
   });
 
   switch(currentIndex) {
     case 0:
-      for (const slide of servicesSlides) {
-        slide.classList.add('first')
+      for (let i = 0; i < servicesSlides.length; i++) {
+        if (i === 0) {
+          servicesSlides[i].classList.add('firstSlide')
+          continue;
+        } else if (i === 1) {
+          servicesSlides[i].classList.add('secondSlideNext')
+          continue;
+        } else {
+          servicesSlides[i].classList.add('first')
+        }   
       }
 
       break;
 
     case 1:
-      for (const slide of servicesSlides) {
-        slide.classList.add('second')
+      for (let i = 0; i < servicesSlides.length; i++) {
+        if (i === 0) {
+          servicesSlides[i].classList.add('firstSlidePrev');
+          continue;
+        } else if (i === 1) {
+          servicesSlides[i].classList.add('secondSlide');
+          continue;
+        } else if (i === 2) {
+          servicesSlides[i].classList.add('thirdSlideNext');
+          continue;
+        } else {
+          servicesSlides[i].classList.add('second')
+        }   
       }
 
       break;
 
     case 2:
-      for (const slide of servicesSlides) {
-        slide.classList.add('third')
+      for (let i = 0; i < servicesSlides.length; i++) {
+        if (i === 0) {
+          servicesSlides[i].classList.add('third');
+        } else if (i === 1) {
+          servicesSlides[i].classList.add('secondSlidePrev');
+          continue;
+        } else if (i === 2) {
+          servicesSlides[i].classList.add('thirdSlide');
+          continue;
+        } else if (i === 3) {
+          servicesSlides[i].classList.add('fourthSlideNext');
+          continue;
+        } else {
+          servicesSlides[i].classList.add('thirdRight')
+        }   
       }
 
       break;
 
     case 3:
-      for (const slide of servicesSlides) {
-        slide.classList.add('fourth')
+      for (let i = 0; i < servicesSlides.length; i++) {
+        if (i === 2) {
+          servicesSlides[i].classList.add('thirdSlidePrev');
+          continue;
+        } else if (i === 3) {
+          servicesSlides[i].classList.add('fourthSlide');
+          continue;
+        } else if (i === 4) {
+          servicesSlides[i].classList.add('fifthSlideNext');
+          continue;
+        } else {
+          servicesSlides[i].classList.add('fourth');
+        }   
       }
-
       break;
 
     case 4:
-      for (const slide of servicesSlides) {
-        slide.classList.add('fifth')
+      for (let i = 0; i < servicesSlides.length; i++) {
+        if (i === 3) {
+          servicesSlides[i].classList.add('fourthSlidePrev');
+          continue;
+        } else if (i === 4) {
+          servicesSlides[i].classList.add('fifthSlide');
+          continue;
+        } else {
+          servicesSlides[i].classList.add('fifth');
+        }   
       }
-
       break;
 
     default:
       break;
   }
 
-  servicesSlides[currentIndex].classList.add('services__slide--is-active');
-  sliderHeaders[currentIndex].classList.add('services__slide-header--is-active');
-  sliderTexts[currentIndex].classList.add('services__slide-text--is-active');
-  sliderPrices[currentIndex].classList.add('services__slide-price--is-active');
-
-  if (currentIndex > 0) {
-    servicesSlides[currentIndex - 1].classList.add('services__slide--prev');
-    sliderHeaders[currentIndex - 1].classList.add('services__slide-header--near');
-    sliderTexts[currentIndex - 1].classList.add('services__slide-text--near');
-    sliderPrices[currentIndex - 1].classList.add('services__slide-price--near');
-  }
-
-  if (currentIndex < servicesSlides.length - 1) {
-    servicesSlides[currentIndex + 1].classList.add('services__slide--next');
-    sliderHeaders[currentIndex + 1].classList.add('services__slide-header--near');
-    sliderTexts[currentIndex + 1].classList.add('services__slide-text--near');
-    sliderPrices[currentIndex + 1].classList.add('services__slide-price--near');
-  }
-
   paginationArray.forEach((item, index) => {
-    console.log(index, currentIndex)
     if (index === currentIndex) {
       item.classList.add('services__pagination-item--is-active');
     } else {

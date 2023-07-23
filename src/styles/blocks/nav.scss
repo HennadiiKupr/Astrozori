@@ -1,8 +1,10 @@
 .nav {
   display: none;
+  visibility: hidden;
 
   @include onNotebook {
     display: block;
+    visibility: visible;
   }
 
   &__list {

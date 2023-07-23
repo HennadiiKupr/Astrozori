@@ -3,6 +3,7 @@
 
   @include onNotebook {
     display: none;
+    visibility: hidden;
   }
 
   background-image: url("../images/menu-background.jpg");

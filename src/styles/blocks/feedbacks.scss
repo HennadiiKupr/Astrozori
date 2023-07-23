@@ -37,6 +37,7 @@
     &-container {
       @include onMobile {
         display: none;
+        visibility: hidden;
       }
       height: 263px;
       width: 2150px;
@@ -94,7 +95,8 @@
 
     &--mobile {
       @include onMobile {
-        display: none
+        display: none;
+        visibility: hidden
       }
     }
     

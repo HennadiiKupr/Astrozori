@@ -48,17 +48,21 @@
 
     &--mobile {
       display: none;
+      visibility: hidden;
   
       @include onMobile {
         display: block;
+        visibility: visible;
       }
     }
 
     &--desktop {
       display: none;
+      visibility: hidden;
   
       @include onNotebook {
         display: block;
+        visibility: visible;
       }
     }
   }

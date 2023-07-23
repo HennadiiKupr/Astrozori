@@ -1,25 +1,30 @@
 .first {
-  transform: translateX(558px);
+  transform: translateX(642px);
   transition: all 0.4s;
 }
 
 .second {
-  transform: translateX(256px);
+  transform: translateX(424px);
   transition: all 0.4s;
 }
 
 .third {
-  transform: translateX(0);
+  transform: translateX(-191px);
+  transition: all 0.4s;
+}
+
+.thirdRight {
+  transform: translateX(191px);
   transition: all 0.4s;
 }
 
 .fourth {
-  transform: translateX(-256px);
+  transform: translateX(-423px);
   transition: all 0.4s;
 }
 
 .fifth {
-  transform: translateX(-558px);
+  transform: translateX(-653px);
   transition: all 0.4s;
 }
 
@@ -70,5 +75,70 @@
 
 .fifthFeedback {
   transform: translateX(-860px);
+  transition: all 0.4s;
+}
+
+.firstSlide {
+  transform: translateX(460px) scale(1.97);
+  transition: all 0.4s;
+}
+
+.secondSlide {
+  transform: translateX(232px) scale(1.97);
+  transition: all 0.4s;
+}
+
+.thirdSlide {
+  transform: translateX(0) scale(1.97);
+  transition: all 0.4s;
+}
+
+.fourthSlide {
+  transform: translateX(-232px) scale(1.97);
+  transition: all 0.4s;
+}
+
+.fifthSlide {
+  transform: translateX(-460px) scale(1.97);
+  transition: all 0.4s;
+}
+
+.firstSlidePrev {
+  transform: translateX(86px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.secondSlidePrev {
+  transform: translateX(-146px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.thirdSlidePrev {
+  transform: translateX(-378px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.fourthSlidePrev {
+  transform: translateX(-608px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.secondSlideNext {
+  transform: translateX(606px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.thirdSlideNext {
+  transform: translateX(378px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.fourthSlideNext {
+  transform: translateX(146px) scale(1.44);
+  transition: all 0.4s;
+}
+
+.fifthSlideNext {
+  transform: translateX(-86px) scale(1.44);
   transition: all 0.4s;
 }
