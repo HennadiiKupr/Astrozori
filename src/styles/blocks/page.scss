@@ -3,11 +3,11 @@
   scroll-behavior: smooth;
   color: $c_main;
   position: relative;
-  overflow-x: hidden;
 
   &__body {
     background-image: url("../images/background-mobile.jpg");
-    background-position: -390px 100vh;
+    background-attachment: fixed;
+    background-position: -390px 209vh;
 
     @include onNotebook {
       background-image: url("../images/background-desktop.jpg");

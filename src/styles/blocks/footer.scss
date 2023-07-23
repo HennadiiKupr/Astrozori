@@ -18,23 +18,6 @@
 
     margin: auto;
 
-    &--mobile {
-      @include onNotebook {
-        display: none;
-        visibility: hidden;
-      }
-    }
-
-    &--desktop {
-      display: none;
-      visibility: hidden;
-
-      @include onNotebook {
-        display: flex;
-        visibility: visible;
-      }
-    }
-
     @include onNotebook {
       flex-direction: row;
       margin-bottom: 85px;
@@ -177,7 +160,6 @@
       text-align: left;
       text-transform: uppercase;
       color: #40392A;
-      text-decoration: none;
 
       @include onNotebook {
         font-size: 16px;
