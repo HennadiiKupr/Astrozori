@@ -29,7 +29,13 @@
   }
 
   &__buttons-paginator {
-    display: flex;
+    display: none;
+    visibility: hidden;
+
+    @include onNotebook {
+      display: flex;
+      visibility: visible;
+    }
     justify-content: space-between;
     width: 100%;
   }
