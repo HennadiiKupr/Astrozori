@@ -1,6 +1,5 @@
 .menu {
   height: 100vh;
-position: fixed;
   @include onNotebook {
     display: none;
     visibility: hidden;
