@@ -63,9 +63,16 @@
   &__logo {
     margin-bottom: 64px;
     text-decoration: none;
+    cursor: pointer;
 
     @include onNotebook {
       margin-bottom: 84px;
+
+      transition: transform 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       width: 108px;
       height: 72px;
@@ -82,6 +89,7 @@
     }
 
     &-image {
+      cursor: pointer;
       @include onNotebook {
         width: 72px;
         height: 52px;
@@ -133,17 +141,27 @@
       &-instagram {
         @include square(32px);
         margin-right: 16px;
+        transition: transform 0.4s;
 
         @include onNotebook {
-          @include square(40px)
+          @include square(40px);
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
 
       &-telegram {
         @include square(32px);
+        transition: transform 0.4s;
 
         @include onNotebook {
-          @include square(40px)
+          @include square(40px);
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
 

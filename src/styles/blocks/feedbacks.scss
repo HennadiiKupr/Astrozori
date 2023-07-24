@@ -46,6 +46,12 @@
     height: 32px;
     transform: scale(-1);
     cursor: pointer;
+
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(-1.1);
+    }
   }
 
   &__btn-next {
@@ -53,6 +59,12 @@
     width: 85px;
     height: 32px;
     cursor: pointer;
+
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__slider {
@@ -111,6 +123,7 @@
     height: 20px;
     width: 80px;
     position: relative;
+    cursor: pointer;
 
     overflow: hidden;
 
