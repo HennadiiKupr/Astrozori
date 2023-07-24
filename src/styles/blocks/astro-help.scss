@@ -2,6 +2,13 @@
   position: relative;
   height: 522px;
 
+  @media screen and (min-width: 488px) and (max-width: 899.5px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
   @include onNotebook {
     height: 772px;
   }
@@ -57,6 +64,11 @@
     margin: 16px 0 32px -197px;
     transform: scale(1.1);
 
+    @media screen and (min-width: 488px) and (max-width: 899.5px) {
+      margin: 9px 0 78px -197px;
+      height: 322px;
+    }
+
     @include onNotebook {
       background-image: url("../images/calender-desktop.png");
       background-position: 100%;
@@ -83,6 +95,10 @@
     height: 362px;
     padding-top: 51px;
     width: 60%;
+
+    @media screen and (min-width: 488px) and (max-width: 899.5px) {
+      padding-top: 67px;
+    }
 
     font-family: 'Ledger', 'Times New Roman', Times, serif;
     font-size: 14px;
