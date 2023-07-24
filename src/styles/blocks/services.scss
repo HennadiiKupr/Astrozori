@@ -152,12 +152,13 @@
 
   &__btn-prev {
     background-image: url("../images/стрілка.svg");
-    width: 85px;
     height: 32px;
     transform: scale(-1);
     cursor: pointer;
+    background-repeat: no-repeat;
+    width: 90px;
 
-    transition: all 0.4s;
+    transition: all 0.3s;
 
     &:hover {
       transform: scale(-1.1);
@@ -166,11 +167,12 @@
 
   &__btn-next {
     background-image: url("../images/стрілка.svg");
-    width: 85px;
+    background-repeat: no-repeat;
+    width: 90px;
     height: 32px;
     cursor: pointer;
 
-    transition: all 0.4s;
+    transition: all 0.3s;
 
     &:hover {
       transform: scale(1.1);
