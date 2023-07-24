@@ -6,15 +6,15 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (min-width: 1024px) and (max-width: 1200px) {
+  @media screen and (min-width: 1024px) and (max-width: 1200px) {
     background-position: 65% -25px;
   }
 
-  @media (min-width: 1200.5px) and (max-width: 1385px) {
+  @media screen and (min-width: 1200.5px) and (max-width: 1385px) {
     background-position: 74% -25px;
   }
 
-  @media (min-width: 1385.5px) {
+  @media screen and (min-width: 1385.5px) {
     background-position: 98% -25px;
   }
 

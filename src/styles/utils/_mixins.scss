@@ -1,17 +1,17 @@
 @mixin onMobile {
-  @media (min-width: 320px) and (max-width: 899.5px) {
+  @media screen and (min-width: 320px) and (max-width: 899.5px) {
     @content;
   }
 }
 
 @mixin onNotebook {
-  @media (min-width: 900px) and (max-width: 3000px) {
+  @media screen and (min-width: 900px) and (max-width: 3000px) {
     @content;
   }
 }
 
 @mixin onHighScreen {
-  @media (min-height: 870px) {
+  @media screen and (min-height: 870px) {
     @content;
   }
 }
