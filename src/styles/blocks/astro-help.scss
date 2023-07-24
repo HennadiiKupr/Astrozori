@@ -43,14 +43,19 @@
 
   &__content-wrapper {
     display: flex;
+    justify-content: center;
     gap: 6px;
-
+    
     @include onNotebook {
       gap: 24px;
     }
 
     @media screen and (min-width: 480px) and (max-width: 900px) {
       margin-right: -100px;
+    }
+
+    @media screen and (min-width: 1370px) {
+      padding: 0 80px;
     }
   }
 
@@ -78,8 +83,12 @@
       margin: 0;
     }
 
-    @media screen and (min-width: 900.5px) and (max-width: 1105.5px) {
-      margin-top: 146px;
+    @media screen and (min-width: 900.5px) and (max-width: 1021.5px) {
+      margin-top: 90px;
+    }
+
+    @media screen and (min-width: 1022px) and (max-width: 1105.5px) {
+      margin-top: 19px;
     }
 
     @media screen and (min-width: 1105.5px) and (max-width: 1160.5px) {
