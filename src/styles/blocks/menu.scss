@@ -1,6 +1,8 @@
 .menu {
   height: 100vh;
-  background-color: white;
+  background-image: url("../images/fluid-art-swirl-acrylic-paint.jpg");
+  background-size: cover;
+  background-position-x: -52px;
   @include onNotebook {
     display: none;
     visibility: hidden;
