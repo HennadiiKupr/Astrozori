@@ -2,16 +2,19 @@
   position: relative;
 
   &__header {
+    width: 100px;
     &-right-line,
     &-left-line {
-      top: 41.5px;
+      top: 20.5px;
     }
-
-    width: 100px;
 
     margin: 0 auto 32px;
 
     @include onNotebook {
+      &-right-line,
+      &-left-line {
+        top: 41.5px;
+      }
       width: 186px;
       margin: 0 auto 64px;
     }
