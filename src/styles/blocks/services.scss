@@ -1,6 +1,6 @@
 .services {
   position: relative;
-  cursor: pointer; 
+  cursor: default;
 
   &__header {
     &-right-line,
@@ -125,6 +125,7 @@
     flex-direction: column;
     align-items: center;
     display: flex;
+    cursor: default;
   }
 
   &__consultation {
@@ -154,12 +155,14 @@
     width: 85px;
     height: 32px;
     transform: scale(-1);
+    cursor: pointer;
   }
 
   &__btn-next {
     background-image: url("../images/стрілка.svg");
     width: 85px;
     height: 32px;
+    cursor: pointer;
   }
 
   &__slider {
@@ -190,6 +193,7 @@
     border-radius: 20px;
     padding: 20.26px 12.07px 13.35px;
     position: relative;
+    cursor: pointer;
 
     height: 234px;
     width: 208px;

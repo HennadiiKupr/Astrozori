@@ -45,12 +45,14 @@
     width: 85px;
     height: 32px;
     transform: scale(-1);
+    cursor: pointer;
   }
 
   &__btn-next {
     background-image: url("../images/стрілка.svg");
     width: 85px;
     height: 32px;
+    cursor: pointer;
   }
 
   &__slider {
@@ -89,6 +91,7 @@
     text-align: center;
     font-weight: 400;
     letter-spacing: 0.04em;
+    cursor: pointer;
 
     &-name {
       font-size: 24px;
