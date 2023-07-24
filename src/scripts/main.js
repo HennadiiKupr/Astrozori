@@ -32,7 +32,11 @@ window.addEventListener('load', function() {
 function changeTextareaHeight(checkbox) {
   const textarea = checkbox.parentNode.nextElementSibling;
   const firstChild = textarea.firstElementChild;
-  if (checkbox.checked) {
+  
+  if (textarea.classList.contains('services__item-content-map') && checkbox.checked) {
+    textarea.style.height = '492px';
+    firstChild.style.height = '469px';
+  } else if (checkbox.checked) {
     textarea.style.height = '427px';
     firstChild.style.height = '411px';
   } else {
